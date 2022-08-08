@@ -5,8 +5,8 @@ import (
 	"fmt"
 
 	bin "github.com/streamingfast/binary"
-	"github.com/streamingfast/solana-go"
-	"github.com/streamingfast/solana-go/text"
+	"github.com/teal-finance/solana-go"
+	"github.com/teal-finance/solana-go/text"
 )
 
 func init() {

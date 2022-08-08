@@ -18,4 +18,4 @@ import (
 	"github.com/streamingfast/logging"
 )
 
-var zlog, tracer = logging.PackageLogger("solana-go", "github.com/streamingfast/solana-go/program/tokenregistry")
+var zlog, tracer = logging.PackageLogger("solana-go", "github.com/teal-finance/solana-go/program/tokenregistry")

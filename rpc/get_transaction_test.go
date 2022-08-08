@@ -2,12 +2,13 @@ package rpc
 
 import (
 	"encoding/json"
-	bin "github.com/streamingfast/binary"
-	"github.com/streamingfast/solana-go"
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
 	"os"
 	"testing"
+
+	bin "github.com/streamingfast/binary"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
+	"github.com/teal-finance/solana-go"
 )
 
 func TestClient_GetTransaction(t *testing.T) {

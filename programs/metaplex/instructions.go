@@ -7,7 +7,7 @@ import (
 	"go.uber.org/zap"
 
 	"github.com/near/borsh-go"
-	"github.com/streamingfast/solana-go"
+	"github.com/teal-finance/solana-go"
 )
 
 var PROGRAM_ID = solana.MustPublicKeyFromBase58("metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s")

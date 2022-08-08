@@ -9,12 +9,12 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/streamingfast/solana-go/diff"
+	"github.com/teal-finance/solana-go/diff"
 
 	bin "github.com/streamingfast/binary"
-	"github.com/streamingfast/solana-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/teal-finance/solana-go"
 )
 
 func TestAccountFlag_Decoder(t *testing.T) {

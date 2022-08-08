@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/streamingfast/solana-go"
-	"github.com/streamingfast/solana-go/rpc"
-	"github.com/streamingfast/solana-go/rpc/ws"
+	"github.com/teal-finance/solana-go"
+	"github.com/teal-finance/solana-go/rpc"
+	"github.com/teal-finance/solana-go/rpc/ws"
 )
 
 func ExampleWS_AccountSubscribe() {

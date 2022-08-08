@@ -7,9 +7,9 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/streamingfast/solana-go"
-	"github.com/streamingfast/solana-go/rpc"
-	"github.com/streamingfast/solana-go/rpc/ws"
+	"github.com/teal-finance/solana-go"
+	"github.com/teal-finance/solana-go/rpc"
+	"github.com/teal-finance/solana-go/rpc/ws"
 )
 
 func SendAndConfirmTransaction(ctx context.Context, rppClient *rpc.Client, wsClient *ws.Client, transaction *solana.Transaction) (signature string, err error) {

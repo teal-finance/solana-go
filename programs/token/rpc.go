@@ -18,11 +18,11 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/streamingfast/solana-go"
-	associatedtokenaccount "github.com/streamingfast/solana-go/programs/associated-token-account"
-	"github.com/streamingfast/solana-go/rpc"
-	"github.com/streamingfast/solana-go/rpc/confirm"
-	"github.com/streamingfast/solana-go/rpc/ws"
+	"github.com/teal-finance/solana-go"
+	associatedtokenaccount "github.com/teal-finance/solana-go/programs/associated-token-account"
+	"github.com/teal-finance/solana-go/rpc"
+	"github.com/teal-finance/solana-go/rpc/confirm"
+	"github.com/teal-finance/solana-go/rpc/ws"
 )
 
 //go:generate rice embed-go

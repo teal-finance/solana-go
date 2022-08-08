@@ -2,7 +2,8 @@ package rpc
 
 import (
 	"fmt"
-	"github.com/streamingfast/solana-go"
+
+	"github.com/teal-finance/solana-go"
 )
 
 func (c *Client) RequestAirdrop(account *solana.PublicKey, lamport uint64, commitment CommitmentType) (signature string, err error) {

@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"math/rand"
 
-	"github.com/streamingfast/solana-go"
+	"github.com/teal-finance/solana-go"
 
-	"github.com/streamingfast/solana-go/rpc"
+	"github.com/teal-finance/solana-go/rpc"
 )
 
 type request struct {

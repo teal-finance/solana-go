@@ -20,8 +20,8 @@ import (
 	"fmt"
 
 	bin "github.com/streamingfast/binary"
-	solana "github.com/streamingfast/solana-go"
-	"github.com/streamingfast/solana-go/text"
+	solana "github.com/teal-finance/solana-go"
+	"github.com/teal-finance/solana-go/text"
 )
 
 var PROGRAM_ID = solana.MustPublicKeyFromBase58("11111111111111111111111111111111")

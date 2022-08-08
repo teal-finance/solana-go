@@ -18,7 +18,7 @@ import (
 	"strings"
 
 	bin "github.com/streamingfast/binary"
-	"github.com/streamingfast/solana-go"
+	"github.com/teal-finance/solana-go"
 )
 
 type RequestQueue struct {

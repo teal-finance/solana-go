@@ -22,10 +22,10 @@ import (
 
 	"github.com/mr-tron/base58"
 	bin "github.com/streamingfast/binary"
-	"github.com/streamingfast/solana-go"
-	"github.com/streamingfast/solana-go/rpc"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/teal-finance/solana-go"
+	"github.com/teal-finance/solana-go/rpc"
 )
 
 func TestAccount(t *testing.T) {

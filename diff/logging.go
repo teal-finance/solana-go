@@ -7,7 +7,7 @@ import (
 	"github.com/streamingfast/logging"
 )
 
-var zlog, tracer = logging.PackageLogger("solana-go", "github.com/streamingfast/solana-go/diff")
+var zlog, tracer = logging.PackageLogger("solana-go", "github.com/teal-finance/solana-go/diff")
 
 type reflectType struct {
 	in interface{}

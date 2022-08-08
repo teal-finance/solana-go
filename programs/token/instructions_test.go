@@ -4,9 +4,9 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/streamingfast/solana-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/teal-finance/solana-go"
 )
 
 func TestNewSetAuthorityInstruction(t *testing.T) {

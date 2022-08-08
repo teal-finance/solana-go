@@ -21,13 +21,13 @@ import (
 	"os"
 	"testing"
 
-	"github.com/streamingfast/solana-go/rpc/ws"
+	"github.com/teal-finance/solana-go/rpc/ws"
 
-	"github.com/streamingfast/solana-go/rpc"
+	"github.com/teal-finance/solana-go/rpc"
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/streamingfast/solana-go"
+	"github.com/teal-finance/solana-go"
 )
 
 func TestFetchMarket(t *testing.T) {

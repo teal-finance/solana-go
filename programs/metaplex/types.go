@@ -5,7 +5,7 @@ import (
 	"regexp"
 
 	"github.com/near/borsh-go"
-	"github.com/streamingfast/solana-go"
+	"github.com/teal-finance/solana-go"
 )
 
 type Key borsh.Enum

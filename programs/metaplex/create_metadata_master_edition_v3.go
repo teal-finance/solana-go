@@ -1,9 +1,9 @@
 package metaplex
 
 import (
-	"github.com/streamingfast/solana-go"
-	"github.com/streamingfast/solana-go/programs/system"
-	"github.com/streamingfast/solana-go/programs/token"
+	"github.com/teal-finance/solana-go"
+	"github.com/teal-finance/solana-go/programs/system"
+	"github.com/teal-finance/solana-go/programs/token"
 )
 
 type CreateMasterEditionV3Account struct {

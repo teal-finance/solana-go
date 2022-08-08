@@ -4,7 +4,7 @@ package serum
 import (
 	"time"
 
-	"github.com/GeertJohan/go.rice/embedded"
+	"github.com/42wim/go.rice/embedded"
 )
 
 func init() {

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/streamingfast/solana-go"
+	"github.com/teal-finance/solana-go"
 )
 
 func TestD(t *testing.T) {

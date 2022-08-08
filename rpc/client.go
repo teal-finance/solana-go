@@ -27,7 +27,7 @@ import (
 
 	bin "github.com/streamingfast/binary"
 	"github.com/streamingfast/logging"
-	"github.com/streamingfast/solana-go"
+	"github.com/teal-finance/solana-go"
 	"github.com/ybbus/jsonrpc"
 	"go.uber.org/atomic"
 	"go.uber.org/zap"

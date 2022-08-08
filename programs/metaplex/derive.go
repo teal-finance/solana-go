@@ -2,7 +2,8 @@ package metaplex
 
 import (
 	"fmt"
-	"github.com/streamingfast/solana-go"
+
+	"github.com/teal-finance/solana-go"
 )
 
 func DeriveMetadataPublicKey(programID, mint solana.PublicKey) (solana.PublicKey, error) {

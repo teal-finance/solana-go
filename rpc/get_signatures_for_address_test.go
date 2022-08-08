@@ -2,11 +2,12 @@ package rpc
 
 import (
 	"encoding/json"
-	"github.com/streamingfast/solana-go"
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
 	"os"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
+	"github.com/teal-finance/solana-go"
 )
 
 func TestClient_GetSignaturesForAddress(t *testing.T) {

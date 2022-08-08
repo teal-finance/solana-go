@@ -22,11 +22,11 @@ import (
 	"time"
 
 	bin "github.com/streamingfast/binary"
-	"github.com/streamingfast/solana-go"
-	"github.com/streamingfast/solana-go/diff"
-	"github.com/streamingfast/solana-go/rpc"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/teal-finance/solana-go"
+	"github.com/teal-finance/solana-go/diff"
+	"github.com/teal-finance/solana-go/rpc"
 )
 
 func TestDecoder_EventQueue_Diff(t *testing.T) {

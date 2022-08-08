@@ -3,8 +3,8 @@ package tokenregistry
 import (
 	"fmt"
 
-	"github.com/streamingfast/solana-go"
-	"github.com/streamingfast/solana-go/rpc"
+	"github.com/teal-finance/solana-go"
+	"github.com/teal-finance/solana-go/rpc"
 )
 
 func GetTokenRegistryEntry(rpcCli *rpc.Client, mintAddress solana.PublicKey) (*TokenMeta, error) {

@@ -20,11 +20,11 @@ import (
 	"encoding/json"
 	"fmt"
 
-	rice "github.com/GeertJohan/go.rice"
+	rice "github.com/42wim/go.rice"
 	bin "github.com/streamingfast/binary"
-	"github.com/streamingfast/solana-go"
-	"github.com/streamingfast/solana-go/rpc"
-	"github.com/streamingfast/solana-go/rpc/ws"
+	"github.com/teal-finance/solana-go"
+	"github.com/teal-finance/solana-go/rpc"
+	"github.com/teal-finance/solana-go/rpc/ws"
 	"go.uber.org/zap"
 )
 

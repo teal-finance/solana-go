@@ -1,8 +1,8 @@
 package metaplex
 
 import (
-	"github.com/streamingfast/solana-go"
-	"github.com/streamingfast/solana-go/programs/system"
+	"github.com/teal-finance/solana-go"
+	"github.com/teal-finance/solana-go/programs/system"
 )
 
 type CreateMetadataV2Account struct {

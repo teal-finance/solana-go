@@ -17,8 +17,8 @@ package serum
 import (
 	"math/big"
 
-	"github.com/streamingfast/solana-go"
-	"github.com/streamingfast/solana-go/programs/token"
+	"github.com/teal-finance/solana-go"
+	"github.com/teal-finance/solana-go/programs/token"
 )
 
 type MarketMeta struct {

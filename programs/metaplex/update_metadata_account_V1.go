@@ -1,7 +1,7 @@
 package metaplex
 
 import (
-	"github.com/streamingfast/solana-go"
+	"github.com/teal-finance/solana-go"
 )
 
 type UpdateMetadataV1Account struct {

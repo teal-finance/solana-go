@@ -1,8 +1,8 @@
 package ws
 
 import (
-	"github.com/streamingfast/solana-go"
-	"github.com/streamingfast/solana-go/rpc"
+	"github.com/teal-finance/solana-go"
+	"github.com/teal-finance/solana-go/rpc"
 )
 
 var base64Conf = map[string]interface{}{
