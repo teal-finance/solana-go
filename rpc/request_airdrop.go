@@ -7,7 +7,6 @@ import (
 )
 
 func (c *Client) RequestAirdrop(account *solana.PublicKey, lamport uint64, commitment CommitmentType) (signature string, err error) {
-
 	obj := map[string]interface{}{
 		"commitment": commitment,
 	}

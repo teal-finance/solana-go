@@ -355,6 +355,7 @@ type Slab struct {
 func (s *Slab) UnmarshalBinary(decoder *bin.Decoder) error {
 	return s.BaseVariant.UnmarshalBinaryVariant(decoder, SlabFactoryImplDef)
 }
+
 func (s *Slab) MarshalBinary(encoder *bin.Encoder) error {
 	err := encoder.WriteUint32(s.TypeID, binary.LittleEndian)
 	if err != nil {

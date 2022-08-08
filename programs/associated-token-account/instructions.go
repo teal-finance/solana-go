@@ -101,6 +101,7 @@ func (i *Instruction) MarshalBinary(encoder *bin.Encoder) error {
 	}
 	return encoder.Encode(i.Impl)
 }
+
 func (i *Instruction) TextEncode(encoder *text.Encoder, option *text.Option) error {
 	return encoder.Encode(i.Impl, option)
 }
@@ -143,7 +144,7 @@ func NewCreateInstruction(
 	}
 }
 
-func MustGetAssociatedTokenAddress(mint solana.PublicKey, programId solana.PublicKey, owner solana.PublicKey) solana.PublicKey {
+func MustGetAssociatedTokenAddress(mint, programId, owner solana.PublicKey) solana.PublicKey {
 	path := [][]byte{
 		owner[:],
 		programId[:],
@@ -155,5 +156,4 @@ func MustGetAssociatedTokenAddress(mint solana.PublicKey, programId solana.Publi
 		panic(fmt.Errorf("unable ot find pda for spl token association: %w", err))
 	}
 	return pubKey
-
 }

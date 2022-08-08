@@ -27,18 +27,18 @@ func (i CreateMasterEditionV3Account) ListAccounts() []*solana.AccountMeta {
 	}
 }
 
-/// Register a Metadata as a Master Edition V2, which means Edition V2s can be minted.
-/// Henceforth, no further tokens will be mintable from this primary mint. Will throw an error if more than one
-/// token exists, and will throw an error if less than one token exists in this primary mint.
-///   0. `[writable]` Unallocated edition V2 account with address as pda of ['metadata', program id, mint, 'edition']
-///   1. `[writable]` Metadata mint
-///   2. `[signer]` Update authority
-///   3. `[signer]` Mint authority on the metadata's mint - THIS WILL TRANSFER AUTHORITY AWAY FROM THIS KEY
-///   4. `[signer]` payer
-///   5.  [writable] Metadata account
-///   6. `[]` Token program
-///   7. `[]` System program
-///   8. `[]` Rent info
+// / Register a Metadata as a Master Edition V2, which means Edition V2s can be minted.
+// / Henceforth, no further tokens will be mintable from this primary mint. Will throw an error if more than one
+// / token exists, and will throw an error if less than one token exists in this primary mint.
+// /   0. `[writable]` Unallocated edition V2 account with address as pda of ['metadata', program id, mint, 'edition']
+// /   1. `[writable]` Metadata mint
+// /   2. `[signer]` Update authority
+// /   3. `[signer]` Mint authority on the metadata's mint - THIS WILL TRANSFER AUTHORITY AWAY FROM THIS KEY
+// /   4. `[signer]` payer
+// /   5.  [writable] Metadata account
+// /   6. `[]` Token program
+// /   7. `[]` System program
+// /   8. `[]` Rent info
 type CreateMetadataMasterEditionV3Accounts struct {
 	Edition         *solana.AccountMeta
 	Mint            *solana.AccountMeta
@@ -61,11 +61,10 @@ func NewCreateMetadataMasterEditionV3Instruction(
 	payer,
 	metadata solana.PublicKey,
 ) *Instruction {
-	var inst = CreateMasterEditionV3Account{
+	inst := CreateMasterEditionV3Account{
 		Instruction: CreateMasterEditionV3Inst,
 		MaxSupply:   maxSupply,
 		Accounts: &CreateMetadataMasterEditionV3Accounts{
-
 			Edition:         &solana.AccountMeta{PublicKey: edition, IsWritable: true},
 			Mint:            &solana.AccountMeta{PublicKey: mint, IsWritable: true},
 			UpdateAuthority: &solana.AccountMeta{PublicKey: updateAuthority, IsSigner: true},

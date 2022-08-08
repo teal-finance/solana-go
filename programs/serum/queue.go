@@ -153,7 +153,7 @@ type Request struct {
 	FeeTier              uint8
 	SelfTradeBehavior    uint8
 	Padding              [4]byte    `json:"-"`
-	MaxCoinQtyOrCancelId bin.Uint64 //the max amount you wish to buy or sell
+	MaxCoinQtyOrCancelId bin.Uint64 // the max amount you wish to buy or sell
 	NativePCQtyLocked    bin.Uint64
 	OrderID              OrderID
 	OpenOrders           [4]bin.Uint64 // this is the openOrder address

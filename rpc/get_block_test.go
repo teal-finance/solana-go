@@ -34,7 +34,7 @@ func TestClient_GetBlock(t *testing.T) {
 				Blockhash:         solana.MustPublicKeyFromBase58("DUCT8VSgk2BXkMhQfxKVYfikEZCQf4dZ4ioPdGdaVxMN"),
 				ParentSlot:        429,
 				PreviousBlockhash: solana.MustPublicKeyFromBase58("HA2fJgGqmQezCXJRVNZAWPbRMXCPjUyo7VjRF47JGdYs"),
-				//Transactions:      nil,
+				// Transactions:      nil,
 			},
 		},
 		{

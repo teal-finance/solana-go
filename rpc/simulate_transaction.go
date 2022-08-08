@@ -37,5 +37,4 @@ func (c *Client) SimulateTransaction(transaction *solana.Transaction) (*Simulate
 	}
 
 	return out, nil
-
 }

@@ -75,7 +75,7 @@ func TestNewTransaction(t *testing.T) {
 		{
 			ProgramIDIndex: 5,
 			AccountCount:   2,
-			Accounts:       []uint8{0, 01},
+			Accounts:       []uint8{0, 0o1},
 			DataLength:     2,
 			Data:           []byte{0xaa, 0xbb},
 		},

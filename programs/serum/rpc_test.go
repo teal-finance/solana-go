@@ -68,5 +68,4 @@ func TestStreamOpenOrders(t *testing.T) {
 
 	err = StreamOpenOrders(context.Background(), client)
 	require.NoError(t, err)
-
 }

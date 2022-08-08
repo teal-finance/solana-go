@@ -36,5 +36,4 @@ func TestD(t *testing.T) {
 
 	cnt, _ = DeriveMetadataPublicKey(solana.MustPublicKeyFromBase58("MET9rAQJoMZBA56vw8pgC5QC9VRzeNWGUPdZqb2DQ7v"), solana.MustPublicKeyFromBase58("7peDKKA7Adx1d4V6ivTP6tnVjWHkwoH9NAT9Xihqxb8F"))
 	fmt.Println(cnt.String())
-
 }

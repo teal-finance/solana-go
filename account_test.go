@@ -8,7 +8,6 @@ import (
 )
 
 func TestNewAccount(t *testing.T) {
-
 	a := NewAccount()
 	privateKey := a.PrivateKey
 	public := a.PublicKey()
@@ -77,5 +76,4 @@ func Test_AccountMeta_less(t *testing.T) {
 			assert.Equal(t, test.expect, test.left.less(test.right))
 		})
 	}
-
 }

@@ -147,7 +147,7 @@ func (c *Client) handleSubscriptionMessage(subID uint64, message []byte) {
 		return
 	}
 
-	//getting and instantiate the return type for the call back.
+	// getting and instantiate the return type for the call back.
 	resultType := reflect.New(sub.reflectType)
 	result := resultType.Interface()
 	err := decodeResponse(bytes.NewReader(message), &result)

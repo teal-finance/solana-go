@@ -2,13 +2,13 @@ package ws
 
 import (
 	"errors"
+	"fmt"
 	"math/rand"
 	"net/http"
 	"net/url"
 	"sync"
 	"time"
 
-	"fmt"
 	"github.com/gorilla/websocket"
 	"github.com/jpillora/backoff"
 
@@ -20,7 +20,7 @@ var (
 	ErrUrlEmpty              = errors.New("url can not be empty")
 	ErrUrlWrongScheme        = errors.New("websocket uri must start with ws or wss scheme")
 	ErrUrlNamePassNotAllowed = errors.New("user name and password are not allowed in websocket uri")
-	//ErrCantConnect           = errors.New("websocket can't connect")
+	// ErrCantConnect           = errors.New("websocket can't connect")
 )
 
 type WsOpts func(dl *websocket.Dialer)
@@ -252,7 +252,6 @@ func parseUrl(urlStr string) (*url.URL, error) {
 		return nil, ErrUrlEmpty
 	}
 	u, err := url.Parse(urlStr)
-
 	if err != nil {
 		return nil, err
 	}

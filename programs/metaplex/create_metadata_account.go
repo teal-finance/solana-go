@@ -25,14 +25,14 @@ func (i CreateMetadataAccount) ListAccounts() []*solana.AccountMeta {
 	}
 }
 
-/// Create Metadata object.
-///   0. `[writable]`  Metadata key (pda of ['metadata', program id, mint id])
-///   1. `[]` Mint of token asset
-///   2. `[signer]` Mint authority
-///   3. `[signer]` payer
-///   4. `[]` update authority info
-///   5. `[]` System program
-///   6. `[]` Rent info
+// / Create Metadata object.
+// /   0. `[writable]`  Metadata key (pda of ['metadata', program id, mint id])
+// /   1. `[]` Mint of token asset
+// /   2. `[signer]` Mint authority
+// /   3. `[signer]` payer
+// /   4. `[]` update authority info
+// /   5. `[]` System program
+// /   6. `[]` Rent info
 type CreateMetadataAccountAccounts struct {
 	Metadata        *solana.AccountMeta
 	Mint            *solana.AccountMeta
@@ -53,7 +53,7 @@ func NewCreateMetadataAccountInstruction(
 	payer,
 	updateAuthority solana.PublicKey,
 ) *Instruction {
-	var inst = CreateMetadataAccount{
+	inst := CreateMetadataAccount{
 		Instruction: CreateMetadataAccountV1Inst,
 		Data:        data,
 		IsMutable:   isMutable,

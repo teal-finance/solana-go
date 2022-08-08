@@ -18,8 +18,8 @@ func DeriveMetadataPublicKey(programID, mint solana.PublicKey) (solana.PublicKey
 		return solana.PublicKey{}, fmt.Errorf("unable to derive metaplex metadata address: %w", err)
 	}
 	return key, nil
-
 }
+
 func DeriveMetadataEditionPublicKey(programID, mint solana.PublicKey) (solana.PublicKey, error) {
 	path := [][]byte{
 		[]byte("metadata"),
@@ -33,7 +33,6 @@ func DeriveMetadataEditionPublicKey(programID, mint solana.PublicKey) (solana.Pu
 		return solana.PublicKey{}, fmt.Errorf("unable to derive metaplex metadata edition address: %w", err)
 	}
 	return key, nil
-
 }
 
 func DeriveMetadataEditionCreationMarkPublicKey(programID, mint solana.PublicKey, editionNumber string) (solana.PublicKey, error) {
@@ -50,5 +49,4 @@ func DeriveMetadataEditionCreationMarkPublicKey(programID, mint solana.PublicKey
 		return solana.PublicKey{}, fmt.Errorf("unable to derive edition pda to mark creation: %w", err)
 	}
 	return key, nil
-
 }

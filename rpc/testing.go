@@ -1,8 +1,9 @@
 package rpc
 
 import (
-	bin "github.com/streamingfast/binary"
 	"reflect"
+
+	bin "github.com/streamingfast/binary"
 )
 
 func newTestClient(url string) *Client {

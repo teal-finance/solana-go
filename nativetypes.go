@@ -71,6 +71,7 @@ func NewSignatureFromBase58(in string) (out Signature, err error) {
 
 	return NewSignatureFromBytes(bytes)
 }
+
 func (s Signature) ToSlice() []byte {
 	return s[:]
 }
@@ -109,7 +110,7 @@ func (s Signature) String() string {
 	return base58.Encode(s[:])
 }
 
-///
+// /
 type Base58 []byte
 
 func (t Base58) MarshalJSON() ([]byte, error) {
@@ -160,7 +161,7 @@ func (t Data) String() string {
 	return base64.StdEncoding.EncodeToString(t)
 }
 
-///
+// /
 type ByteWrapper struct {
 	io.Reader
 }

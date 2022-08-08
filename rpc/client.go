@@ -61,7 +61,8 @@ func NewClient(rpcURL string, opts ...ClientOption) *Client {
 				Transport: &withLoggingRoundTripper{
 					defaultLogger: &zlog,
 					tracer:        tracer,
-				}},
+				},
+			},
 		}),
 		requestIDGenerator: generateRequestID,
 	}

@@ -14,7 +14,7 @@ type Token struct {
 	Mint      string
 }
 
-func New(programID string, mint string) *Token {
+func New(programID, mint string) *Token {
 	return &Token{ProgramID: programID, Mint: mint}
 }
 

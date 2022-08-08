@@ -302,7 +302,8 @@ func TestClient_GetTransaction(t *testing.T) {
 						InstructionErrorType: "Custom",
 					},
 					Fee: 5000,
-					PreBalances: []bin.Uint64{11012972505841,
+					PreBalances: []bin.Uint64{
+						11012972505841,
 						83944560,
 						6410160,
 						32141280,
@@ -315,7 +316,8 @@ func TestClient_GetTransaction(t *testing.T) {
 						1141440,
 						1141440,
 					},
-					PostBalances: []bin.Uint64{11012972500841,
+					PostBalances: []bin.Uint64{
+						11012972500841,
 						83944560,
 						6410160,
 						32141280,

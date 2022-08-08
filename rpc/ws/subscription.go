@@ -29,10 +29,10 @@ func newSubscription(req *request, reflectType reflect.Type, closeFunc func(err 
 // Recv waits for a message to arrive through the WebSocket connection for this exact subscription.
 //
 // It will either returns:
-//  - `<value>, nil` If the stream has a message available
-//  - `nil, err` If the subscription encounteted an error
-//  - `nil, context.Canceled` If the context received was canceled
-//  - `nil, context.DeadlineExceed` If the context timeout was reached
+//   - `<value>, nil` If the stream has a message available
+//   - `nil, err` If the subscription encounteted an error
+//   - `nil, context.Canceled` If the context received was canceled
+//   - `nil, context.DeadlineExceed` If the context timeout was reached
 //
 // Upon receiving a `context.Canceled` or `context.DeadlineExceed`, the subscription is
 // automatically unsubscribed.
@@ -60,5 +60,4 @@ func (s *Subscription) Unsubscribe() {
 
 func (s *Subscription) unsubscribe(err error) {
 	s.closeFunc(err)
-
 }

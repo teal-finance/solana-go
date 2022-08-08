@@ -20,9 +20,9 @@ func (i UpdateMetadataV1Account) ListAccounts() []*solana.AccountMeta {
 	}
 }
 
-/// Update a Metadata
-///   0. `[writable]` Metadata account
-///   1. `[signer]` Update authority key
+// / Update a Metadata
+// /   0. `[writable]` Metadata account
+// /   1. `[signer]` Update authority key
 type UpdateMetadataAccountV1Accounts struct {
 	Metadata           *solana.AccountMeta
 	UpdateAuthorityKey *solana.AccountMeta
@@ -45,7 +45,7 @@ func NewUpdateMetadataAccountV1Instruction(
 	metadata solana.PublicKey,
 	updateAuthorityKey solana.PublicKey,
 ) *Instruction {
-	var inst = UpdateMetadataV1Account{
+	inst := UpdateMetadataV1Account{
 		Instruction:         UpdateMetadataAccountV1Inst,
 		Data:                data,
 		UpdateAuthority:     updateAuthority,

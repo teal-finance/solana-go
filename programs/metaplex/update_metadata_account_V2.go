@@ -35,7 +35,7 @@ func NewUpdateMetadataAccountV2Instruction(
 	metadata solana.PublicKey,
 	updateAuthorityKey solana.PublicKey,
 ) *Instruction {
-	var inst = UpdateMetadataV2Account{
+	inst := UpdateMetadataV2Account{
 		Instruction:         UpdateMetadataAccountV2Inst,
 		Data:                data,
 		UpdateAuthority:     updateAuthority,

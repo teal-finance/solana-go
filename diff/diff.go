@@ -178,7 +178,7 @@ func reflectValueCanIsNil(value reflect.Value) bool {
 	}
 }
 
-func Diff(left interface{}, right interface{}, opts ...Option) {
+func Diff(left, right interface{}, opts ...Option) {
 	options := options{}
 	for _, opt := range opts {
 		opt.apply(&options)

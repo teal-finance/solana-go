@@ -17,7 +17,6 @@ func mustB64Decode(in string) []byte {
 		panic(err)
 	}
 	return out
-
 }
 
 func TestClient_GetProgramAccount(t *testing.T) {

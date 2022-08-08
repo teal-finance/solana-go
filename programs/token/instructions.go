@@ -132,12 +132,12 @@ func (i *Instruction) MarshalBinary(encoder *bin.Encoder) error {
 	}
 	return encoder.Encode(i.Impl)
 }
+
 func (i *Instruction) TextEncode(encoder *text.Encoder, option *text.Option) error {
 	return encoder.Encode(i.Impl, option)
 }
 
-type InitializeMultisigAccounts struct {
-}
+type InitializeMultisigAccounts struct{}
 type InitializeMultisig struct {
 	Accounts *InitializeMultisigAccounts
 }
@@ -221,14 +221,12 @@ func NewTransferInstruction(
 	}
 }
 
-type ApproveAccounts struct {
-}
+type ApproveAccounts struct{}
 type Approve struct {
 	Accounts *ApproveAccounts
 }
 
-type RevokeAccounts struct {
-}
+type RevokeAccounts struct{}
 type Revoke struct {
 	Accounts *RevokeAccounts
 }
@@ -281,7 +279,6 @@ type MintToAccounts struct {
 	///   0. `[writable]` The mint.
 	///   1. `[writable]` The account to mint tokens to.
 	///   2. `[signer]` The mint's minting authority.
-
 }
 type MintTo struct {
 	Amount   uint64
@@ -309,8 +306,7 @@ func NewMintTo(
 	}
 }
 
-type BurnAccounts struct {
-}
+type BurnAccounts struct{}
 type Burn struct {
 	Accounts *BurnAccounts
 }
@@ -344,48 +340,42 @@ func NewCloseAccount(
 	}
 }
 
-type FreezeAccountAccounts struct {
-}
+type FreezeAccountAccounts struct{}
 type FreezeAccount struct {
 	Accounts *FreezeAccountAccounts
 }
 
-type ThawAccountAccounts struct {
-}
+type ThawAccountAccounts struct{}
 type ThawAccount struct {
 	Accounts *ThawAccountAccounts
 }
 
-type TransferCheckedAccounts struct {
-}
+type TransferCheckedAccounts struct{}
 type TransferChecked struct {
 	Accounts *TransferCheckedAccounts
 }
 
-type ApproveCheckedAccounts struct {
-}
+type ApproveCheckedAccounts struct{}
 type ApproveChecked struct {
 	Accounts *ApproveCheckedAccounts
 }
 
-type MintToCheckedAccounts struct {
-}
+type MintToCheckedAccounts struct{}
 type MintToChecked struct {
 	Accounts *MintToCheckedAccounts
 }
 
-type BurnCheckedAccounts struct {
-}
+type BurnCheckedAccounts struct{}
 type BurnChecked struct {
 	Accounts *BurnCheckedAccounts
 }
 
-/// Accounts expected by this instruction:
-///
-///   0. `[writable]`  The account to initialize.
-///   1. `[]` The mint this account will be associated with.
-///   2. `[]` The new account's owner/multisignature.
-///   3. `[]` Rent sysvar
+// / Accounts expected by this instruction:
+// /
+// /   0. `[writable]`  The account to initialize.
+// /   1. `[]` The mint this account will be associated with.
+// /   2. `[]` The new account's owner/multisignature.
+// /   3. `[]` Rent sysvar
 type InitializeAccountAccounts struct {
 	Account    *solana.AccountMeta `text:"linear,notype"`
 	Mint       *solana.AccountMeta `text:"linear,notype"`

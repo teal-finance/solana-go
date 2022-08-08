@@ -52,8 +52,10 @@ func readHexFile(t *testing.T, file string) []byte {
 	return out
 }
 
-var zstEncoder, _ = zstd.NewWriter(nil)
-var zstDecoder, _ = zstd.NewReader(nil)
+var (
+	zstEncoder, _ = zstd.NewWriter(nil)
+	zstDecoder, _ = zstd.NewReader(nil)
+)
 
 func readFile(t *testing.T, file string) []byte {
 	data, err := ioutil.ReadFile(file)

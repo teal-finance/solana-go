@@ -101,6 +101,7 @@ func PublicKeyFromBytes(in []byte) (out PublicKey) {
 	copy(out[:], in[0:max])
 	return
 }
+
 func (p PublicKey) ToSlice() []byte {
 	return p[:]
 }
@@ -159,6 +160,7 @@ func createProgramAddress(seeds [][]byte, programId PublicKey) (PublicKey, error
 	}
 	return pkey, nil
 }
+
 func (p PublicKey) MarshalJSON() ([]byte, error) {
 	return json.Marshal(base58.Encode(p[:]))
 }
