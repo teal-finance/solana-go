@@ -22,8 +22,8 @@ import (
 	"fmt"
 
 	bin "github.com/gagliardetto/binary"
-	"github.com/gagliardetto/solana-go/text"
 	"github.com/gagliardetto/treeout"
+	"github.com/teal-finance/solana-go/text"
 )
 
 type Message struct {

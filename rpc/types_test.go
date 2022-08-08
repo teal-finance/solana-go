@@ -18,8 +18,8 @@ import (
 	stdjson "encoding/json"
 	"testing"
 
-	"github.com/gagliardetto/solana-go"
 	"github.com/stretchr/testify/assert"
+	"github.com/teal-finance/solana-go"
 )
 
 func TestData_base64_zstd(t *testing.T) {

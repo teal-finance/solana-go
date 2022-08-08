@@ -6,8 +6,8 @@ import (
 
 	"github.com/davecgh/go-spew/spew"
 	bin "github.com/gagliardetto/binary"
-	"github.com/gagliardetto/solana-go"
 	"github.com/stretchr/testify/require"
+	"github.com/teal-finance/solana-go"
 )
 
 func TestMint(t *testing.T) {

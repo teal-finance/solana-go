@@ -19,10 +19,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/gagliardetto/solana-go/rpc"
+	"github.com/teal-finance/solana-go/rpc"
 
-	"github.com/gagliardetto/solana-go/vault"
 	"github.com/spf13/viper"
+	"github.com/teal-finance/solana-go/vault"
 )
 
 func getClient() *rpc.Client {

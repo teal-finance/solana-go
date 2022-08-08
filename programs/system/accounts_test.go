@@ -19,8 +19,8 @@ import (
 	"testing"
 
 	bin "github.com/gagliardetto/binary"
-	"github.com/gagliardetto/solana-go"
 	"github.com/stretchr/testify/assert"
+	"github.com/teal-finance/solana-go"
 )
 
 func TestDecode(t *testing.T) {

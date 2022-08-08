@@ -27,9 +27,9 @@ import (
 
 	"github.com/AlekSi/pointer"
 	bin "github.com/gagliardetto/binary"
-	"github.com/gagliardetto/solana-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/teal-finance/solana-go"
 )
 
 func TestClient_GetAccountInfo(t *testing.T) {

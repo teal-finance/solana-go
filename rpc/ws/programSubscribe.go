@@ -15,8 +15,8 @@
 package ws
 
 import (
-	"github.com/gagliardetto/solana-go"
-	"github.com/gagliardetto/solana-go/rpc"
+	"github.com/teal-finance/solana-go"
+	"github.com/teal-finance/solana-go/rpc"
 )
 
 type ProgramResult struct {
