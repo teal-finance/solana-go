@@ -22,7 +22,7 @@ import (
 	"context"
 	"fmt"
 
-	rice "github.com/GeertJohan/go.rice"
+	rice "github.com/42wim/go.rice"
 	bin "github.com/gagliardetto/binary"
 	"github.com/teal-finance/solana-go"
 	"github.com/teal-finance/solana-go/rpc"
@@ -30,7 +30,7 @@ import (
 	"go.uber.org/zap"
 )
 
-//go:generate rice embed-go
+//go:generate go run github.com/42wim/go.rice/rice embed-go
 
 // TODO: hit the chain and
 func KnownMarket() ([]*MarketMeta, error) {
