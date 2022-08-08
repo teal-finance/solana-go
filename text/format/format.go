@@ -76,7 +76,7 @@ func Meta(name string, meta *solana.AccountMeta) string {
 	return out
 }
 
-func prefixEachLineExceptFirst(prefix string, s string) string {
+func prefixEachLineExceptFirst(prefix, s string) string {
 	return foreachLine(s,
 		func(i int, line string) string {
 			if i == 0 {

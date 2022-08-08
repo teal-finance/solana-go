@@ -57,7 +57,7 @@ You can then use this vault for the different cmd operations.`,
 			os.Exit(1)
 		}
 
-		var wrapType = viper.GetString("vault-create-cmd-vault-type")
+		wrapType := viper.GetString("vault-create-cmd-vault-type")
 		var boxer vault.SecretBoxer
 
 		kmsGCPKeypath := viper.GetString("global-kms-gcp-keypath")

@@ -100,7 +100,6 @@ func (inst *Allocate) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("Allocate")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {
 						paramsBranch.Child(ag_format.Param("Space", *inst.Space))
@@ -141,7 +140,8 @@ func NewAllocateInstruction(
 	// Parameters:
 	space uint64,
 	// Accounts:
-	newAccount ag_solanago.PublicKey) *Allocate {
+	newAccount ag_solanago.PublicKey,
+) *Allocate {
 	return NewAllocateInstructionBuilder().
 		SetSpace(space).
 		SetNewAccount(newAccount)

@@ -26,7 +26,6 @@ import (
 
 // Revokes the delegate's authority.
 type Revoke struct {
-
 	// [0] = [WRITE] source
 	// ··········· The source account.
 	//
@@ -134,7 +133,6 @@ func (inst *Revoke) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("Revoke")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {})
 
@@ -159,6 +157,7 @@ func (inst *Revoke) EncodeToTree(parent ag_treeout.Branches) {
 func (obj Revoke) MarshalWithEncoder(encoder *ag_binary.Encoder) (err error) {
 	return nil
 }
+
 func (obj *Revoke) UnmarshalWithDecoder(decoder *ag_binary.Decoder) (err error) {
 	return nil
 }

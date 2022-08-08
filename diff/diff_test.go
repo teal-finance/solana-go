@@ -34,44 +34,53 @@ func TestDiff(t *testing.T) {
 		expecteds []string
 	}{
 		// Plain
-		{"plain - left nil, right nil",
+		{
+			"plain - left nil, right nil",
 			pair{nil, nil},
 			nil,
 		},
-		{"plain - left nil, right set",
+		{
+			"plain - left nil, right set",
 			pair{nil, &plainStruct{}},
 			[]string{"<nil> => &{0} (*diff.plainStruct) (added)"},
 		},
-		{"plain - left set, right nil",
+		{
+			"plain - left set, right nil",
 			pair{&plainStruct{}, nil},
 			[]string{"&{0} (*diff.plainStruct) => <nil> (removed)"},
 		},
-		{"plain - equal",
+		{
+			"plain - equal",
 			pair{&plainStruct{}, &plainStruct{}},
 			nil,
 		},
-		{"plain - diff",
+		{
+			"plain - diff",
 			pair{&plainStruct{Field: 1}, &plainStruct{Field: 2}},
 			[]string{"1 (int) => 2 (int) (changed @ Field)"},
 		},
 
 		// Slice
-		{"slice - equal both nil",
+		{
+			"slice - equal both nil",
 			pair{[]string(nil), []string(nil)},
 			nil,
 		},
-		{"slice - equal both length 0",
+		{
+			"slice - equal both length 0",
 			pair{[]string{}, []string{}},
 			nil,
 		},
-		{"slice - diff both length 1",
+		{
+			"slice - diff both length 1",
 			pair{[]string{"a"}, []string{"b"}},
 			[]string{
 				"a (string) => <nil> (removed @ [0])",
 				"<nil> => b (string) (added @ [0])",
 			},
 		},
-		{"slice - diff both length 2 re-ordered",
+		{
+			"slice - diff both length 2 re-ordered",
 			pair{[]string{"a", "b"}, []string{"b", "a"}},
 			[]string{
 				"a (string) => <nil> (removed @ [0])",
@@ -80,7 +89,8 @@ func TestDiff(t *testing.T) {
 				"<nil> => a (string) (added @ [1])",
 			},
 		},
-		{"slice - diff left is longer than right, all different",
+		{
+			"slice - diff left is longer than right, all different",
 			pair{[]string{"a", "b"}, []string{"c"}},
 			[]string{
 				"a (string) => <nil> (removed @ [0])",
@@ -88,13 +98,15 @@ func TestDiff(t *testing.T) {
 				"b (string) => <nil> (removed @ [1->?])",
 			},
 		},
-		{"slice - diff left is longer than right, some equals",
+		{
+			"slice - diff left is longer than right, some equals",
 			pair{[]string{"a", "b"}, []string{"a"}},
 			[]string{
 				"b (string) => <nil> (removed @ [1->?])",
 			},
 		},
-		{"slice - diff left is smaller than right, all different",
+		{
+			"slice - diff left is smaller than right, all different",
 			pair{[]string{"a"}, []string{"b", "c"}},
 			[]string{
 				"a (string) => <nil> (removed @ [0])",
@@ -102,7 +114,8 @@ func TestDiff(t *testing.T) {
 				"<nil> => c (string) (added @ [?->1])",
 			},
 		},
-		{"slice - diff left is smaller than right, some equals",
+		{
+			"slice - diff left is smaller than right, some equals",
 			pair{[]string{"a"}, []string{"a", "b"}},
 			[]string{
 				"<nil> => b (string) (added @ [?->1])",
@@ -110,7 +123,8 @@ func TestDiff(t *testing.T) {
 		},
 
 		// Full
-		{"full - everything diff",
+		{
+			"full - everything diff",
 			pair{
 				&topStruct{
 					Literal: "x",

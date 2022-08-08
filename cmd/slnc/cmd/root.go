@@ -30,7 +30,7 @@ import (
 // Version represents the cmd command version
 var Version string
 
-//const defaultRPCURL = "http://localhost:8899"
+// const defaultRPCURL = "http://localhost:8899"
 const defaultRPCURL = "http://api.mainnet-beta.solana.com"
 
 // RootCmd represents the eosc command
@@ -50,7 +50,7 @@ func Execute() {
 func init() {
 	cobra.OnInitialize(initConfig)
 	// Not implemnted
-	//RootCmd.PersistentFlags().BoolP("debug", "", false, "Enables verbose API debug messages")
+	// RootCmd.PersistentFlags().BoolP("debug", "", false, "Enables verbose API debug messages")
 	RootCmd.PersistentFlags().StringP("vault-file", "", "./solana-vault.json", "Wallet file that contains encrypted key material")
 	RootCmd.PersistentFlags().StringP("rpc-url", "u", defaultRPCURL, "API endpoint of eos.io blockchain node")
 	RootCmd.PersistentFlags().StringSliceP("http-header", "H", []string{}, "HTTP header to add to JSON-RPC requests")

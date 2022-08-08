@@ -175,7 +175,7 @@ func (slice AccountMetaSlice) SplitFrom(index int) (AccountMetaSlice, AccountMet
 	return first, second
 }
 
-func calcSplitAtLengths(total int, index int) (int, int) {
+func calcSplitAtLengths(total, index int) (int, int) {
 	if index == 0 {
 		return 0, total
 	}

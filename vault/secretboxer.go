@@ -28,7 +28,7 @@ type SecretBoxer interface {
 	WrapType() string
 }
 
-func SecretBoxerForType(boxerType string, keypath string) (SecretBoxer, error) {
+func SecretBoxerForType(boxerType, keypath string) (SecretBoxer, error) {
 	switch boxerType {
 	case "kms-gcp":
 		if keypath == "" {

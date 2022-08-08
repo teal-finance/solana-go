@@ -30,9 +30,11 @@ var DisableColors = false
 func S(a ...interface{}) string {
 	return fmt.Sprint(a...)
 }
+
 func Sf(format string, a ...interface{}) string {
 	return fmt.Sprintf(format, a...)
 }
+
 func Ln(a ...interface{}) string {
 	return fmt.Sprintln(a...)
 }
@@ -263,7 +265,6 @@ func calcColor(color uint64) (red, green, blue, alpha uint64) {
 
 // IsLight returns whether the color is perceived to be a light color
 func IsLight(rr, gg, bb uint64) bool {
-
 	r := float64(rr)
 	g := float64(gg)
 	b := float64(bb)

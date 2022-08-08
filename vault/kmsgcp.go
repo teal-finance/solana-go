@@ -54,7 +54,6 @@ func (b *KMSGCPBoxer) Seal(in []byte) (string, error) {
 	}
 
 	return base64.RawStdEncoding.EncodeToString(encrypted), nil
-
 }
 
 func (b *KMSGCPBoxer) Open(in string) ([]byte, error) {

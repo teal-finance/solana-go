@@ -438,7 +438,6 @@ func (tx Transaction) MustToBase64() string {
 }
 
 func (tx *Transaction) EncodeToTree(parent treeout.Branches) {
-
 	parent.ParentFunc(func(txTree treeout.Branches) {
 		txTree.Child(fmt.Sprintf("Signatures[len=%v]", len(tx.Signatures))).ParentFunc(func(signaturesBranch treeout.Branches) {
 			for _, sig := range tx.Signatures {
@@ -473,7 +472,6 @@ func (tx *Transaction) EncodeToTree(parent treeout.Branches) {
 							programBranch.Child(text.Purple(text.Bold("Instruction")) + ": " + text.Bold("<unknown>")).
 								//
 								ParentFunc(func(instructionBranch treeout.Branches) {
-
 									// Data of the instruction call:
 									instructionBranch.Child(text.Sf("data[len=%v bytes]", len(inst.Data))).ParentFunc(func(paramsBranch treeout.Branches) {
 										paramsBranch.Child(bin.FormatByteSlice(inst.Data))
@@ -485,7 +483,6 @@ func (tx *Transaction) EncodeToTree(parent treeout.Branches) {
 											accountsBranch.Child(formatMeta(text.Sf("accounts[%v]", i), accounts[i]))
 										}
 									})
-
 								})
 						})
 				}

@@ -25,7 +25,6 @@ import (
 )
 
 func TestNewAccount(t *testing.T) {
-
 	a := NewWallet()
 	privateKey := a.PrivateKey
 	public := a.PublicKey()

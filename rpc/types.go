@@ -193,8 +193,8 @@ type InnerInstruction struct {
 	Instructions []solana.CompiledInstruction `json:"instructions"`
 }
 
-// 	Ok  interface{} `json:"Ok"`  // <null> Transaction was successful
-// 	Err interface{} `json:"Err"` // Transaction failed with TransactionError
+// Ok  interface{} `json:"Ok"`  // <null> Transaction was successful
+// Err interface{} `json:"Err"` // Transaction failed with TransactionError
 type DeprecatedTransactionMetaStatus M
 
 type TransactionSignature struct {
@@ -277,7 +277,6 @@ func (dt DataBytesOrJSON) MarshalJSON() ([]byte, error) {
 }
 
 func (wrap *DataBytesOrJSON) UnmarshalJSON(data []byte) error {
-
 	if len(data) == 0 || (len(data) == 4 && string(data) == "null") {
 		// TODO: is this an error?
 		return nil

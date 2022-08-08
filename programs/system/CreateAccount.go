@@ -137,7 +137,6 @@ func (inst *CreateAccount) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("CreateAccount")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {
 						paramsBranch.Child(ag_format.Param("Lamports", *inst.Lamports))
@@ -212,7 +211,8 @@ func NewCreateAccountInstruction(
 	owner ag_solanago.PublicKey,
 	// Accounts:
 	fundingAccount ag_solanago.PublicKey,
-	newAccount ag_solanago.PublicKey) *CreateAccount {
+	newAccount ag_solanago.PublicKey,
+) *CreateAccount {
 	return NewCreateAccountInstructionBuilder().
 		SetLamports(lamports).
 		SetSpace(space).

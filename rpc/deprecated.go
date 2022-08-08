@@ -62,7 +62,6 @@ func (cl *Client) GetConfirmedBlockWithOpts(
 	slot uint64,
 	opts *GetConfirmedBlockOpts,
 ) (out *GetConfirmedBlockResult, err error) {
-
 	params := []interface{}{slot}
 	if opts != nil {
 		obj := M{}
@@ -101,7 +100,6 @@ func (cl *Client) GetConfirmedBlocks(
 	endSlot *uint64,
 	commitment CommitmentType,
 ) (out []uint64, err error) {
-
 	params := []interface{}{startSlot}
 	if endSlot != nil {
 		params = append(params, endSlot)
@@ -124,7 +122,6 @@ func (cl *Client) GetConfirmedBlocksWithLimit(
 	limit uint64,
 	commitment CommitmentType,
 ) (out []uint64, err error) {
-
 	params := []interface{}{startSlot, limit}
 	if commitment != "" {
 		params = append(params, M{"commitment": string(commitment)})
@@ -144,7 +141,6 @@ func (cl *Client) GetConfirmedSignaturesForAddress2(
 	address solana.PublicKey,
 	opts *GetConfirmedSignaturesForAddress2Opts,
 ) (out GetConfirmedSignaturesForAddress2Result, err error) {
-
 	params := []interface{}{address}
 
 	if opts != nil {

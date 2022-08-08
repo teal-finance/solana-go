@@ -100,7 +100,6 @@ func (inst *Assign) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("Assign")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {
 						paramsBranch.Child(ag_format.Param("Owner", *inst.Owner))
@@ -141,7 +140,8 @@ func NewAssignInstruction(
 	// Parameters:
 	owner ag_solanago.PublicKey,
 	// Accounts:
-	assignedAccount ag_solanago.PublicKey) *Assign {
+	assignedAccount ag_solanago.PublicKey,
+) *Assign {
 	return NewAssignInstructionBuilder().
 		SetOwner(owner).
 		SetAssignedAccount(assignedAccount)

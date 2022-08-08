@@ -40,7 +40,8 @@ func main() {
 	{
 		out, err := client.GetMultipleAccountsWithOpts(
 			context.TODO(),
-			[]solana.PublicKey{solana.MustPublicKeyFromBase58("SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt"), // serum token
+			[]solana.PublicKey{
+				solana.MustPublicKeyFromBase58("SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt"),  // serum token
 				solana.MustPublicKeyFromBase58("4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R"), // raydium token
 			},
 			&rpc.GetMultipleAccountsOpts{

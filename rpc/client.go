@@ -29,8 +29,10 @@ import (
 	"github.com/teal-finance/solana-go/rpc/jsonrpc"
 )
 
-var ErrNotFound = errors.New("not found")
-var ErrNotConfirmed = errors.New("not confirmed")
+var (
+	ErrNotFound     = errors.New("not found")
+	ErrNotConfirmed = errors.New("not confirmed")
+)
 
 type Client struct {
 	rpcURL    string

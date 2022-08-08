@@ -155,7 +155,6 @@ func TestDecoder_Orderbook(t *testing.T) {
 			},
 		},
 	}, ob.Nodes[5])
-
 }
 
 func TestDecoder_Slabs(t *testing.T) {
@@ -232,7 +231,6 @@ func TestDecoder_Slabs(t *testing.T) {
 
 			assert.Equal(t, test.expectSlab, slab)
 		})
-
 	}
 }
 
@@ -258,7 +256,6 @@ func TestOrderID(t *testing.T) {
 
 	assert.Equal(t, "00000000000193c100000000000fbcc2", orderID.HexString(false))
 	assert.Equal(t, "0x00000000000193c100000000000fbcc2", orderID.HexString(true))
-
 }
 
 func Test_OpenOrder_GetOrder(t *testing.T) {

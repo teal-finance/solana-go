@@ -50,7 +50,6 @@ type Varuint16 uint16
 
 func (o Varuint16) TextEncode(encoder *Encoder, option *Option) error {
 	return encoder.ToWriter(fmt.Sprintf("%d", int(o)), option.indent, option.fgColor)
-
 }
 
 type Varuint32 uint32
@@ -63,7 +62,6 @@ type Varint32 int32
 
 func (o Varint32) TextEncode(encoder *Encoder, option *Option) error {
 	return encoder.ToWriter(fmt.Sprintf("%d", int(o)), option.indent, option.fgColor)
-
 }
 
 type JSONFloat64 float64

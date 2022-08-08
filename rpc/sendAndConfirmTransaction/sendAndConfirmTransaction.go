@@ -31,7 +31,7 @@ func SendAndConfirmTransaction(
 	transaction *solana.Transaction,
 ) (signature solana.Signature, err error) {
 	opts := rpc.TransactionOpts{
-		SkipPreflight: false,
+		SkipPreflight:       false,
 		PreflightCommitment: rpc.CommitmentFinalized,
 	}
 
@@ -52,7 +52,6 @@ func SendAndConfirmTransactionWithOpts(
 	transaction *solana.Transaction,
 	opts rpc.TransactionOpts,
 ) (signature solana.Signature, err error) {
-
 	sig, err := rpcClient.SendTransactionWithOpts(
 		ctx,
 		transaction,

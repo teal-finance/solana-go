@@ -154,7 +154,6 @@ func (inst *WithdrawNonceAccount) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("WithdrawNonceAccount")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {
 						paramsBranch.Child(ag_format.Param("Lamports", *inst.Lamports))
@@ -203,7 +202,8 @@ func NewWithdrawNonceAccountInstruction(
 	recipientAccount ag_solanago.PublicKey,
 	SysVarRecentBlockHashesPubkey ag_solanago.PublicKey,
 	SysVarRentPubkey ag_solanago.PublicKey,
-	nonceAuthorityAccount ag_solanago.PublicKey) *WithdrawNonceAccount {
+	nonceAuthorityAccount ag_solanago.PublicKey,
+) *WithdrawNonceAccount {
 	return NewWithdrawNonceAccountInstructionBuilder().
 		SetLamports(lamports).
 		SetNonceAccount(nonceAccount).

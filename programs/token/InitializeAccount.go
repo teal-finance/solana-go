@@ -35,7 +35,6 @@ import (
 // Otherwise another party can acquire ownership of the uninitialized
 // account.
 type InitializeAccount struct {
-
 	// [0] = [WRITE] account
 	// ··········· The account to initialize.
 	//
@@ -154,7 +153,6 @@ func (inst *InitializeAccount) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("InitializeAccount")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {})
 
@@ -172,6 +170,7 @@ func (inst *InitializeAccount) EncodeToTree(parent ag_treeout.Branches) {
 func (obj InitializeAccount) MarshalWithEncoder(encoder *ag_binary.Encoder) (err error) {
 	return nil
 }
+
 func (obj *InitializeAccount) UnmarshalWithDecoder(decoder *ag_binary.Decoder) (err error) {
 	return nil
 }
@@ -182,7 +181,8 @@ func NewInitializeAccountInstruction(
 	account ag_solanago.PublicKey,
 	mint ag_solanago.PublicKey,
 	owner ag_solanago.PublicKey,
-	SysVarRentPubkey ag_solanago.PublicKey) *InitializeAccount {
+	SysVarRentPubkey ag_solanago.PublicKey,
+) *InitializeAccount {
 	return NewInitializeAccountInstructionBuilder().
 		SetAccount(account).
 		SetMintAccount(mint).

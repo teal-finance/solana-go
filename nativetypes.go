@@ -87,6 +87,7 @@ var zeroSignature = Signature{}
 func (sig Signature) IsZero() bool {
 	return sig == zeroSignature
 }
+
 func (sig Signature) Equals(pb Signature) bool {
 	return sig == pb
 }

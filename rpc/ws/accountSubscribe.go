@@ -48,7 +48,6 @@ func (cl *Client) AccountSubscribeWithOpts(
 	commitment rpc.CommitmentType,
 	encoding solana.EncodingType,
 ) (*AccountSubscription, error) {
-
 	params := []interface{}{account.String()}
 	conf := map[string]interface{}{
 		"encoding": "base64",

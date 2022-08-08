@@ -186,7 +186,6 @@ func (inst *MintToChecked) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("MintToChecked")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {
 						paramsBranch.Child(ag_format.Param("  Amount", *inst.Amount))
@@ -225,6 +224,7 @@ func (obj MintToChecked) MarshalWithEncoder(encoder *ag_binary.Encoder) (err err
 	}
 	return nil
 }
+
 func (obj *MintToChecked) UnmarshalWithDecoder(decoder *ag_binary.Decoder) (err error) {
 	// Deserialize `Amount`:
 	err = decoder.Decode(&obj.Amount)

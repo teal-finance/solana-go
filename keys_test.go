@@ -530,7 +530,7 @@ func TestFindProgramAddress(t *testing.T) {
 			[][]byte{
 				[]byte("Lil'"),
 				[]byte("Bits"),
-				[]byte{bump_seed},
+				{bump_seed},
 			},
 			program_id,
 		)

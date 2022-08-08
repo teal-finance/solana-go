@@ -134,7 +134,6 @@ func (inst *InitializeMultisig2) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("InitializeMultisig2")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {
 						paramsBranch.Child(ag_format.Param("M", *inst.M))
@@ -165,6 +164,7 @@ func (obj InitializeMultisig2) MarshalWithEncoder(encoder *ag_binary.Encoder) (e
 	}
 	return nil
 }
+
 func (obj *InitializeMultisig2) UnmarshalWithDecoder(decoder *ag_binary.Decoder) (err error) {
 	// Deserialize `M`:
 	err = decoder.Decode(&obj.M)

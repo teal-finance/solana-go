@@ -59,6 +59,7 @@ func LogoFromString(logo string) (Logo, error) {
 	copy(l[:], data)
 	return l, nil
 }
+
 func (l Logo) String() string {
 	return AsciiString(l[:])
 }

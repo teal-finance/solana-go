@@ -74,7 +74,6 @@ func (inst *Create) SetMint(mint solana.PublicKey) *Create {
 }
 
 func (inst Create) Build() *Instruction {
-
 	// Find the associatedTokenAddress;
 	associatedTokenAddress, _, _ := solana.FindAssociatedTokenAddress(
 		inst.Wallet,
@@ -164,7 +163,6 @@ func (inst *Create) EncodeToTree(parent treeout.Branches) {
 			programBranch.Child(format.Instruction("Create")).
 				//
 				ParentFunc(func(instructionBranch treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params[len=0]").ParentFunc(func(paramsBranch treeout.Branches) {})
 

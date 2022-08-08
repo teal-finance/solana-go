@@ -7,7 +7,6 @@ import (
 )
 
 func TestRegisterInstructionDecoder(t *testing.T) {
-
 	decoder := func(instructionAccounts []*AccountMeta, data []byte) (interface{}, error) {
 		return nil, nil
 	}

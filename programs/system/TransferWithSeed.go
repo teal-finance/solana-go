@@ -150,7 +150,6 @@ func (inst *TransferWithSeed) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("TransferWithSeed")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {
 						paramsBranch.Child(ag_format.Param(" Lamports", *inst.Lamports))
@@ -228,7 +227,8 @@ func NewTransferWithSeedInstruction(
 	// Accounts:
 	fundingAccount ag_solanago.PublicKey,
 	baseForFundingAccount ag_solanago.PublicKey,
-	recipientAccount ag_solanago.PublicKey) *TransferWithSeed {
+	recipientAccount ag_solanago.PublicKey,
+) *TransferWithSeed {
 	return NewTransferWithSeedInstructionBuilder().
 		SetLamports(lamports).
 		SetFromSeed(from_seed).

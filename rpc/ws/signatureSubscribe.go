@@ -35,7 +35,6 @@ func (cl *Client) SignatureSubscribe(
 	signature solana.Signature, // Transaction Signature.
 	commitment rpc.CommitmentType, // (optional)
 ) (*SignatureSubscription, error) {
-
 	params := []interface{}{signature.String()}
 	conf := map[string]interface{}{}
 	if commitment != "" {

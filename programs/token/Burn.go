@@ -170,7 +170,6 @@ func (inst *Burn) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("Burn")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {
 						paramsBranch.Child(ag_format.Param("Amount", *inst.Amount))
@@ -203,6 +202,7 @@ func (obj Burn) MarshalWithEncoder(encoder *ag_binary.Encoder) (err error) {
 	}
 	return nil
 }
+
 func (obj *Burn) UnmarshalWithDecoder(decoder *ag_binary.Decoder) (err error) {
 	// Deserialize `Amount`:
 	err = decoder.Decode(&obj.Amount)

@@ -41,8 +41,10 @@ const (
 	grayFg            = (Color(232 + 12)) << 16
 )
 
-var bufferpool = buffer.NewPool()
-var levelToColor map[zapcore.Level]Color
+var (
+	bufferpool   = buffer.NewPool()
+	levelToColor map[zapcore.Level]Color
+)
 
 var _loggerPool = sync.Pool{New: func() interface{} {
 	return &Encoder{}

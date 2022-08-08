@@ -137,7 +137,6 @@ func (inst *AssignWithSeed) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("AssignWithSeed")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {
 						paramsBranch.Child(ag_format.Param(" Base", *inst.Base))
@@ -213,7 +212,8 @@ func NewAssignWithSeedInstruction(
 	owner ag_solanago.PublicKey,
 	// Accounts:
 	assignedAccount ag_solanago.PublicKey,
-	baseAccount ag_solanago.PublicKey) *AssignWithSeed {
+	baseAccount ag_solanago.PublicKey,
+) *AssignWithSeed {
 	return NewAssignWithSeedInstructionBuilder().
 		SetBase(base).
 		SetSeed(seed).

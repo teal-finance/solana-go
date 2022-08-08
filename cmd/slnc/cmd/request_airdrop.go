@@ -32,7 +32,6 @@ var requestCmd = &cobra.Command{
 	Short: "Request lamport airdrop for an account",
 	Args:  cobra.ExactArgs(2),
 	RunE: func(cmd *cobra.Command, args []string) error {
-
 		client := getClient()
 
 		address, err := solana.PublicKeyFromBase58(args[0])

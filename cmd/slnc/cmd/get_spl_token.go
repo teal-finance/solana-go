@@ -59,7 +59,7 @@ var getSPLTokenCmd = &cobra.Command{
 
 		for _, keyedAcct := range resp {
 			acct := keyedAcct.Account
-			//fmt.Println("Data len:", len(acct.Data), keyedAcct.Pubkey)
+			// fmt.Println("Data len:", len(acct.Data), keyedAcct.Pubkey)
 			var mint *token.Mint
 			if err := bin.NewBinDecoder(acct.Data.GetBinary()).Decode(&mint); err != nil {
 				log.Fatalln("failed unpack", err)

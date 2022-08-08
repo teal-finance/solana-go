@@ -208,7 +208,6 @@ func (inst *TransferChecked) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("TransferChecked")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {
 						paramsBranch.Child(ag_format.Param("  Amount", *inst.Amount))
@@ -248,6 +247,7 @@ func (obj TransferChecked) MarshalWithEncoder(encoder *ag_binary.Encoder) (err e
 	}
 	return nil
 }
+
 func (obj *TransferChecked) UnmarshalWithDecoder(decoder *ag_binary.Decoder) (err error) {
 	// Deserialize `Amount`:
 	err = decoder.Decode(&obj.Amount)

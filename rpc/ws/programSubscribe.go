@@ -48,7 +48,6 @@ func (cl *Client) ProgramSubscribeWithOpts(
 	encoding solana.EncodingType,
 	filters []rpc.RPCFilter,
 ) (*ProgramSubscription, error) {
-
 	params := []interface{}{programID.String()}
 	conf := map[string]interface{}{
 		"encoding": "base64",

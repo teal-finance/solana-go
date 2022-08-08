@@ -77,7 +77,6 @@ func (cl *Client) logsSubscribe(
 	filter interface{},
 	commitment rpc.CommitmentType,
 ) (*LogSubscription, error) {
-
 	params := []interface{}{filter}
 	conf := map[string]interface{}{}
 	if commitment != "" {

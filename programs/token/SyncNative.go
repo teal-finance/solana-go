@@ -29,7 +29,6 @@ import (
 // to move lamports to a wrapped token account, and needs to have its token
 // `amount` field updated.
 type SyncNative struct {
-
 	// [0] = [WRITE] tokenAccount
 	// ··········· The native token account to sync with its underlying lamports.
 	ag_solanago.AccountMetaSlice `bin:"-" borsh_skip:"true"`
@@ -90,7 +89,6 @@ func (inst *SyncNative) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("SyncNative")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {})
 
@@ -105,6 +103,7 @@ func (inst *SyncNative) EncodeToTree(parent ag_treeout.Branches) {
 func (obj SyncNative) MarshalWithEncoder(encoder *ag_binary.Encoder) (err error) {
 	return nil
 }
+
 func (obj *SyncNative) UnmarshalWithDecoder(decoder *ag_binary.Decoder) (err error) {
 	return nil
 }
@@ -112,7 +111,8 @@ func (obj *SyncNative) UnmarshalWithDecoder(decoder *ag_binary.Decoder) (err err
 // NewSyncNativeInstruction declares a new SyncNative instruction with the provided parameters and accounts.
 func NewSyncNativeInstruction(
 	// Accounts:
-	tokenAccount ag_solanago.PublicKey) *SyncNative {
+	tokenAccount ag_solanago.PublicKey,
+) *SyncNative {
 	return NewSyncNativeInstructionBuilder().
 		SetTokenAccount(tokenAccount)
 }

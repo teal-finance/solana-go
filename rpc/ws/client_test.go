@@ -134,8 +134,8 @@ func Test_ProgramSubscribe(t *testing.T) {
 		}
 		fmt.Println("data received: ", data.Value.Pubkey)
 	}
-
 }
+
 func Test_SlotSubscribe(t *testing.T) {
 	t.Skip("Never ending test, revisit me to not depend on actual network calls, or hide between env flag")
 

@@ -96,7 +96,7 @@ func TestNewTransaction(t *testing.T) {
 	assert.Equal(t, trx.Message.Instructions, []CompiledInstruction{
 		{
 			ProgramIDIndex: 5,
-			Accounts:       []uint16{0, 01},
+			Accounts:       []uint16{0, 0o1},
 			Data:           []byte{0xaa, 0xbb},
 		},
 		{

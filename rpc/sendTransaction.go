@@ -57,11 +57,11 @@ func (cl *Client) SendTransaction(
 //
 // Before submitting, the following preflight checks are performed:
 //
-// 	- The transaction signatures are verified
-//  - The transaction is simulated against the bank slot specified by the preflight
-//    commitment. On failure an error will be returned. Preflight checks may be
-//    disabled if desired. It is recommended to specify the same commitment and
-//    preflight commitment to avoid confusing behavior.
+//   - The transaction signatures are verified
+//   - The transaction is simulated against the bank slot specified by the preflight
+//     commitment. On failure an error will be returned. Preflight checks may be
+//     disabled if desired. It is recommended to specify the same commitment and
+//     preflight commitment to avoid confusing behavior.
 //
 // The returned signature is the first signature in the transaction, which is
 // used to identify the transaction (transaction id). This identifier can be

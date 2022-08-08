@@ -130,7 +130,6 @@ func (inst *InitializeNonceAccount) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("InitializeNonceAccount")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {
 						paramsBranch.Child(ag_format.Param("Authorized", *inst.Authorized))
@@ -175,7 +174,8 @@ func NewInitializeNonceAccountInstruction(
 	// Accounts:
 	nonceAccount ag_solanago.PublicKey,
 	SysVarRecentBlockHashesPubkey ag_solanago.PublicKey,
-	SysVarRentPubkey ag_solanago.PublicKey) *InitializeNonceAccount {
+	SysVarRentPubkey ag_solanago.PublicKey,
+) *InitializeNonceAccount {
 	return NewInitializeNonceAccountInstructionBuilder().
 		SetAuthorized(authorized).
 		SetNonceAccount(nonceAccount).

@@ -179,6 +179,7 @@ func outputOrderBook(entries []*orderBookEntry, totalSize *big.Float, reverse bo
 	}
 	return
 }
+
 func init() {
 	serumGetCmd.AddCommand(serumGetMarketCmd)
 }

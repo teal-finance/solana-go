@@ -113,7 +113,6 @@ func (inst *Transfer) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("Transfer")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {
 						paramsBranch.Child(ag_format.Param("Lamports", *inst.Lamports))
@@ -156,7 +155,8 @@ func NewTransferInstruction(
 	lamports uint64,
 	// Accounts:
 	fundingAccount ag_solanago.PublicKey,
-	recipientAccount ag_solanago.PublicKey) *Transfer {
+	recipientAccount ag_solanago.PublicKey,
+) *Transfer {
 	return NewTransferInstructionBuilder().
 		SetLamports(lamports).
 		SetFundingAccount(fundingAccount).

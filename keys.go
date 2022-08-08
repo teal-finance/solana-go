@@ -275,7 +275,7 @@ func (slice PublicKeySlice) Split(chunkSize int) []PublicKeySlice {
 // two slices:
 // - `added` is the slice of pubkeys that are present in `next` but NOT present in `previous`.
 // - `removed` is the slice of pubkeys that are present in `previous` but are NOT present in `next`.
-func GetAddedRemovedPubkeys(previous PublicKeySlice, next PublicKeySlice) (added PublicKeySlice, removed PublicKeySlice) {
+func GetAddedRemovedPubkeys(previous, next PublicKeySlice) (added, removed PublicKeySlice) {
 	added = make(PublicKeySlice, 0)
 	removed = make(PublicKeySlice, 0)
 

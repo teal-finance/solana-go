@@ -26,7 +26,6 @@ import (
 
 // Freeze an Initialized account using the Mint's freeze_authority (if set).
 type FreezeAccount struct {
-
 	// [0] = [WRITE] account
 	// ··········· The account to freeze.
 	//
@@ -153,7 +152,6 @@ func (inst *FreezeAccount) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("FreezeAccount")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {})
 
@@ -179,6 +177,7 @@ func (inst *FreezeAccount) EncodeToTree(parent ag_treeout.Branches) {
 func (obj FreezeAccount) MarshalWithEncoder(encoder *ag_binary.Encoder) (err error) {
 	return nil
 }
+
 func (obj *FreezeAccount) UnmarshalWithDecoder(decoder *ag_binary.Decoder) (err error) {
 	return nil
 }

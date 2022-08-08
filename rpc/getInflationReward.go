@@ -36,7 +36,6 @@ func (cl *Client) GetInflationReward(
 	addresses []solana.PublicKey,
 
 	opts *GetInflationRewardOpts,
-
 ) (out []*GetInflationRewardResult, err error) {
 	params := []interface{}{addresses}
 	if opts != nil {

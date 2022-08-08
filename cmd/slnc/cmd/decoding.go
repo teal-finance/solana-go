@@ -34,7 +34,6 @@ func decode(owner solana.PublicKey, data []byte) (interface{}, error) {
 }
 
 func decodeAsToken(data []byte) (out interface{}, err error) {
-
 	switch len(data) {
 	case 120:
 		var tokenAcct token.Account

@@ -182,7 +182,6 @@ func (inst *CreateAccountWithSeed) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("CreateAccountWithSeed")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {
 						paramsBranch.Child(ag_format.Param("    Base", *inst.Base))
@@ -292,7 +291,8 @@ func NewCreateAccountWithSeedInstruction(
 	// Accounts:
 	fundingAccount ag_solanago.PublicKey,
 	createdAccount ag_solanago.PublicKey,
-	baseAccount ag_solanago.PublicKey) *CreateAccountWithSeed {
+	baseAccount ag_solanago.PublicKey,
+) *CreateAccountWithSeed {
 	return NewCreateAccountWithSeedInstructionBuilder().
 		SetBase(base).
 		SetSeed(seed).

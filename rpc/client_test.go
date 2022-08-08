@@ -145,7 +145,8 @@ func TestClient_GetConfirmedSignaturesForAddress2(t *testing.T) {
 			"params": []interface{}{
 				"H7ATJQGhwG8Uf8sUntUognFpsKixPy2buFnXkvyNbGUb",
 				map[string]interface{}{"limit": float64(1)},
-			}},
+			},
+		},
 		server.RequestBody(t),
 	)
 
@@ -656,40 +657,41 @@ func TestClient_GetBlockCommitment(t *testing.T) {
 		server.RequestBody(t),
 	)
 
-	expected := map[string]interface{}{"commitment": []interface{}{
-		stdjson.Number("0"),
-		stdjson.Number("0"),
-		stdjson.Number("0"),
-		stdjson.Number("0"),
-		stdjson.Number("0"),
-		stdjson.Number("0"),
-		stdjson.Number("0"),
-		stdjson.Number("0"),
-		stdjson.Number("0"),
-		stdjson.Number("0"),
-		stdjson.Number("0"),
-		stdjson.Number("0"),
-		stdjson.Number("0"),
-		stdjson.Number("0"),
-		stdjson.Number("0"),
-		stdjson.Number("0"),
-		stdjson.Number("0"),
-		stdjson.Number("0"),
-		stdjson.Number("0"),
-		stdjson.Number("44854495719374"),
-		stdjson.Number("0"),
-		stdjson.Number("51599979318189"),
-		stdjson.Number("5070972605440"),
-		stdjson.Number("140323113958535"),
-		stdjson.Number("169550804919131"),
-		stdjson.Number("272061505737107"),
-		stdjson.Number("860587424880950"),
-		stdjson.Number("1374732609383053"),
-		stdjson.Number("2334359721325133"),
-		stdjson.Number("4664454087479672"),
-		stdjson.Number("10122947678661428"),
-		stdjson.Number("52107037802932750"),
-	},
+	expected := map[string]interface{}{
+		"commitment": []interface{}{
+			stdjson.Number("0"),
+			stdjson.Number("0"),
+			stdjson.Number("0"),
+			stdjson.Number("0"),
+			stdjson.Number("0"),
+			stdjson.Number("0"),
+			stdjson.Number("0"),
+			stdjson.Number("0"),
+			stdjson.Number("0"),
+			stdjson.Number("0"),
+			stdjson.Number("0"),
+			stdjson.Number("0"),
+			stdjson.Number("0"),
+			stdjson.Number("0"),
+			stdjson.Number("0"),
+			stdjson.Number("0"),
+			stdjson.Number("0"),
+			stdjson.Number("0"),
+			stdjson.Number("0"),
+			stdjson.Number("44854495719374"),
+			stdjson.Number("0"),
+			stdjson.Number("51599979318189"),
+			stdjson.Number("5070972605440"),
+			stdjson.Number("140323113958535"),
+			stdjson.Number("169550804919131"),
+			stdjson.Number("272061505737107"),
+			stdjson.Number("860587424880950"),
+			stdjson.Number("1374732609383053"),
+			stdjson.Number("2334359721325133"),
+			stdjson.Number("4664454087479672"),
+			stdjson.Number("10122947678661428"),
+			stdjson.Number("52107037802932750"),
+		},
 		"totalStake": stdjson.Number("73611541921665680"),
 	}
 
@@ -2498,8 +2500,10 @@ func TestClient_GetTokenAccountsByOwner(t *testing.T) {
 	assert.Equal(t, expected, got, "both deserialized values must be equal")
 }
 
-var encodedTx string = "AfjEs3XhTc3hrxEvlnMPkm/cocvAUbFNbCl00qKnrFue6J53AhEqIFmcJJlJW3EDP5RmcMz+cNTTcZHW/WJYwAcBAAEDO8hh4VddzfcO5jbCt95jryl6y8ff65UcgukHNLWH+UQGgxCGGpgyfQVQV02EQYqm4QwzUt2qf9f1gVLM7rI4hwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6ANIF55zOZWROWRkeh+lExxZBnKFqbvIxZDLE7EijjoBAgIAAQwCAAAAOTAAAAAAAAA="
-var txSignatureString string = "5yUSwqQqeZLEEYKxnG4JC4XhaaBpV3RS4nQbK8bQTyjLX5btVq9A1Ja5nuJzV7Z3Zq8G6EVKFvN4DKUL6PSAxmTk"
+var (
+	encodedTx         string = "AfjEs3XhTc3hrxEvlnMPkm/cocvAUbFNbCl00qKnrFue6J53AhEqIFmcJJlJW3EDP5RmcMz+cNTTcZHW/WJYwAcBAAEDO8hh4VddzfcO5jbCt95jryl6y8ff65UcgukHNLWH+UQGgxCGGpgyfQVQV02EQYqm4QwzUt2qf9f1gVLM7rI4hwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6ANIF55zOZWROWRkeh+lExxZBnKFqbvIxZDLE7EijjoBAgIAAQwCAAAAOTAAAAAAAAA="
+	txSignatureString string = "5yUSwqQqeZLEEYKxnG4JC4XhaaBpV3RS4nQbK8bQTyjLX5btVq9A1Ja5nuJzV7Z3Zq8G6EVKFvN4DKUL6PSAxmTk"
+)
 
 func TestClient_SendTransaction(t *testing.T) {
 	responseBody := fmt.Sprintf(`"%s"`, txSignatureString)

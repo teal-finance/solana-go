@@ -91,7 +91,6 @@ func (cl *Client) GetAccountInfoWithOpts(
 	account solana.PublicKey,
 	opts *GetAccountInfoOpts,
 ) (out *GetAccountInfoResult, err error) {
-
 	obj := M{
 		// default encoding:
 		"encoding": solana.EncodingBase64,

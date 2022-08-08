@@ -144,7 +144,6 @@ func (inst *InitializeAccount2) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("InitializeAccount2")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {
 						paramsBranch.Child(ag_format.Param("Owner", *inst.Owner))
@@ -168,6 +167,7 @@ func (obj InitializeAccount2) MarshalWithEncoder(encoder *ag_binary.Encoder) (er
 	}
 	return nil
 }
+
 func (obj *InitializeAccount2) UnmarshalWithDecoder(decoder *ag_binary.Decoder) (err error) {
 	// Deserialize `Owner`:
 	err = decoder.Decode(&obj.Owner)
@@ -184,7 +184,8 @@ func NewInitializeAccount2Instruction(
 	// Accounts:
 	account ag_solanago.PublicKey,
 	mint ag_solanago.PublicKey,
-	SysVarRentPubkey ag_solanago.PublicKey) *InitializeAccount2 {
+	SysVarRentPubkey ag_solanago.PublicKey,
+) *InitializeAccount2 {
 	return NewInitializeAccount2InstructionBuilder().
 		SetOwner(owner).
 		SetAccount(account).

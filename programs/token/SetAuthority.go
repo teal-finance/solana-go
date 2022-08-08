@@ -160,7 +160,6 @@ func (inst *SetAuthority) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("SetAuthority")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {
 						paramsBranch.Child(ag_format.Param("     AuthorityType", *inst.AuthorityType))
@@ -211,6 +210,7 @@ func (obj SetAuthority) MarshalWithEncoder(encoder *ag_binary.Encoder) (err erro
 	}
 	return nil
 }
+
 func (obj *SetAuthority) UnmarshalWithDecoder(decoder *ag_binary.Decoder) (err error) {
 	// Deserialize `AuthorityType`:
 	err = decoder.Decode(&obj.AuthorityType)

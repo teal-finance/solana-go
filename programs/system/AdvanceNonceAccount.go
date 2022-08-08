@@ -26,7 +26,6 @@ import (
 
 // Consumes a stored nonce, replacing it with a successor
 type AdvanceNonceAccount struct {
-
 	// [0] = [WRITE] NonceAccount
 	// ··········· Nonce account
 	//
@@ -111,7 +110,6 @@ func (inst *AdvanceNonceAccount) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("AdvanceNonceAccount")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {})
 
@@ -138,7 +136,8 @@ func NewAdvanceNonceAccountInstruction(
 	// Accounts:
 	nonceAccount ag_solanago.PublicKey,
 	SysVarRecentBlockHashesPubkey ag_solanago.PublicKey,
-	nonceAuthorityAccount ag_solanago.PublicKey) *AdvanceNonceAccount {
+	nonceAuthorityAccount ag_solanago.PublicKey,
+) *AdvanceNonceAccount {
 	return NewAdvanceNonceAccountInstructionBuilder().
 		SetNonceAccount(nonceAccount).
 		SetSysVarRecentBlockHashesPubkeyAccount(SysVarRecentBlockHashesPubkey).

@@ -84,7 +84,6 @@ func (cl *Client) GetBlockWithOpts(
 	slot uint64,
 	opts *GetBlockOpts,
 ) (out *GetBlockResult, err error) {
-
 	obj := M{
 		"encoding": solana.EncodingBase64,
 	}

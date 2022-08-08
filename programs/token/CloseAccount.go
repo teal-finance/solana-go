@@ -27,7 +27,6 @@ import (
 // Close an account by transferring all its SOL to the destination account.
 // Non-native accounts may only be closed if its token amount is zero.
 type CloseAccount struct {
-
 	// [0] = [WRITE] account
 	// ··········· The account to close.
 	//
@@ -154,7 +153,6 @@ func (inst *CloseAccount) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("CloseAccount")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {})
 
@@ -180,6 +178,7 @@ func (inst *CloseAccount) EncodeToTree(parent ag_treeout.Branches) {
 func (obj CloseAccount) MarshalWithEncoder(encoder *ag_binary.Encoder) (err error) {
 	return nil
 }
+
 func (obj *CloseAccount) UnmarshalWithDecoder(decoder *ag_binary.Decoder) (err error) {
 	return nil
 }

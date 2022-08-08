@@ -22,8 +22,10 @@ import (
 	"go.uber.org/zap"
 )
 
-var traceEnabled = logging.IsTraceEnabled("solana-go", "github.com/teal-finance/solana-go/rpc")
-var zlog *zap.Logger
+var (
+	traceEnabled = logging.IsTraceEnabled("solana-go", "github.com/teal-finance/solana-go/rpc")
+	zlog         *zap.Logger
+)
 
 func init() {
 	logging.Register("github.com/teal-finance/solana-go/rpc", &zlog)

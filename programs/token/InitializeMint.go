@@ -152,7 +152,6 @@ func (inst *InitializeMint) EncodeToTree(parent ag_treeout.Branches) {
 			programBranch.Child(ag_format.Instruction("InitializeMint")).
 				//
 				ParentFunc(func(instructionBranch ag_treeout.Branches) {
-
 					// Parameters of the instruction:
 					instructionBranch.Child("Params").ParentFunc(func(paramsBranch ag_treeout.Branches) {
 						paramsBranch.Child(ag_format.Param("             Decimals", *inst.Decimals))
@@ -200,6 +199,7 @@ func (obj InitializeMint) MarshalWithEncoder(encoder *ag_binary.Encoder) (err er
 	}
 	return nil
 }
+
 func (obj *InitializeMint) UnmarshalWithDecoder(decoder *ag_binary.Decoder) (err error) {
 	// Deserialize `Decimals`:
 	err = decoder.Decode(&obj.Decimals)
@@ -235,7 +235,8 @@ func NewInitializeMintInstruction(
 	freeze_authority ag_solanago.PublicKey,
 	// Accounts:
 	mint ag_solanago.PublicKey,
-	SysVarRentPubkey ag_solanago.PublicKey) *InitializeMint {
+	SysVarRentPubkey ag_solanago.PublicKey,
+) *InitializeMint {
 	return NewInitializeMintInstructionBuilder().
 		SetDecimals(decimals).
 		SetMintAuthority(mint_authority).

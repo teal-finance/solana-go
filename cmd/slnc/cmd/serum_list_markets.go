@@ -30,7 +30,6 @@ var serumListMarketsCmd = &cobra.Command{
 	Short: "Get serum markets",
 	Args:  cobra.ExactArgs(0),
 	RunE: func(cmd *cobra.Command, args []string) error {
-
 		markets, err := serum.KnownMarket()
 		if err != nil {
 			return fmt.Errorf("unable to retrieve markets: %w", err)

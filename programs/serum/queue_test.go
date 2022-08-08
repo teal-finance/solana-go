@@ -34,7 +34,7 @@ import (
 )
 
 func TestDecoder_EventQueue_Diff(t *testing.T) {
-	//t.Skip("diff event queue test")
+	// t.Skip("diff event queue test")
 
 	oldDataFile := "testdata/serum-event-queue-old.bin.zst"
 	newDataFile := "testdata/serum-event-queue-new.bin.zst"
