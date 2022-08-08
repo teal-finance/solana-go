@@ -28,7 +28,7 @@ import (
 	"go.uber.org/zap"
 )
 
-//go:generate rice embed-go
+//go:generate go run github.com/42wim/go.rice/rice embed-go
 
 // TODO: hit the chain and
 func KnownMarket() ([]*MarketMeta, error) {

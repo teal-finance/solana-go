@@ -25,7 +25,7 @@ import (
 	"github.com/teal-finance/solana-go/rpc/ws"
 )
 
-//go:generate rice embed-go
+//go:generate go run github.com/42wim/go.rice/rice embed-go
 
 func FetchMints(rpcCli *rpc.Client) (out []*Mint, err error) {
 	resp, err := rpcCli.GetProgramAccounts(
