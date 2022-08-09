@@ -1,10 +1,9 @@
 package serum
 
 import (
-	"encoding/binary"
 	"fmt"
 
-	bin "github.com/streamingfast/binary"
+	bin "github.com/gagliardetto/binary"
 	"github.com/teal-finance/solana-go"
 	"github.com/teal-finance/solana-go/text"
 )
@@ -24,7 +23,7 @@ func registryDecodeInstruction(accounts []*solana.AccountMeta, data []byte) (int
 func DecodeInstruction(accounts []*solana.AccountMeta, data []byte) (*Instruction, error) {
 	// FIXME: can't we dedupe this in some ways? It's copied in all of the programs' folders.
 	var inst Instruction
-	if err := bin.NewDecoder(data).Decode(&inst); err != nil {
+	if err := bin.NewBinDecoder(data).Decode(&inst); err != nil {
 		return nil, fmt.Errorf("unable to decode instruction for serum program: %w", err)
 	}
 
@@ -80,7 +79,7 @@ func (i *Instruction) MarshalBinary(encoder *bin.Encoder) error {
 		return fmt.Errorf("unable to write instruction version: %w", err)
 	}
 
-	err = encoder.WriteUint32(i.TypeID, binary.LittleEndian)
+	err = encoder.WriteUint32(i.TypeID.Uint32(), bin.LE)
 	if err != nil {
 		return fmt.Errorf("unable to write variant type: %w", err)
 	}

@@ -6,520 +6,648 @@
  "NativeBaseTokenTotal": "374817100000",
  "NativeQuoteTokenFree": "27061856249",
  "NativeQuoteTokenTotal": "398993915777",
- "FreeSlotBits": "0xffffffffffffffffffffffffd0e00000",
- "IsBidBits": "0x0000000000000000000000002f13a5d6",
+ "FreeSlotBits": "340282366920938463463374607430977585152",
+ "IsBidBits": "789816790",
  "Orders": [
   {
    "Lo": 18446744073704103085,
-   "Hi": 2235
+   "Hi": 2235,
+   "Endianness": null
   },
   {
    "Lo": 18446744073704103212,
-   "Hi": 2184
+   "Hi": 2184,
+   "Endianness": null
   },
   {
    "Lo": 18446744073704103132,
-   "Hi": 2226
+   "Hi": 2226,
+   "Endianness": null
   },
   {
    "Lo": 5448400,
-   "Hi": 2266
+   "Hi": 2266,
+   "Endianness": null
   },
   {
    "Lo": 18446744073704103214,
-   "Hi": 2226
+   "Hi": 2226,
+   "Endianness": null
   },
   {
    "Lo": 5448489,
-   "Hi": 2277
+   "Hi": 2277,
+   "Endianness": null
   },
   {
    "Lo": 18446744073704103601,
-   "Hi": 2184
+   "Hi": 2184,
+   "Endianness": null
   },
   {
    "Lo": 18446744073704103128,
-   "Hi": 2210
+   "Hi": 2210,
+   "Endianness": null
   },
   {
    "Lo": 18446744073704103084,
-   "Hi": 2205
+   "Hi": 2205,
+   "Endianness": null
   },
   {
    "Lo": 5447999,
-   "Hi": 2464
+   "Hi": 2464,
+   "Endianness": null
   },
   {
    "Lo": 18446744073704103677,
-   "Hi": 2112
+   "Hi": 2112,
+   "Endianness": null
   },
   {
    "Lo": 5448287,
-   "Hi": 2308
+   "Hi": 2308,
+   "Endianness": null
   },
   {
    "Lo": 5448316,
-   "Hi": 2325
+   "Hi": 2325,
+   "Endianness": null
   },
   {
    "Lo": 18446744073704103083,
-   "Hi": 2240
+   "Hi": 2240,
+   "Endianness": null
   },
   {
    "Lo": 5448533,
-   "Hi": 2488
+   "Hi": 2488,
+   "Endianness": null
   },
   {
    "Lo": 18446744073704103738,
-   "Hi": 2137
+   "Hi": 2137,
+   "Endianness": null
   },
   {
    "Lo": 18446744073704103735,
-   "Hi": 2131
+   "Hi": 2131,
+   "Endianness": null
   },
   {
    "Lo": 18446744073704103081,
-   "Hi": 2241
+   "Hi": 2241,
+   "Endianness": null
   },
   {
    "Lo": 5448535,
-   "Hi": 2268
+   "Hi": 2268,
+   "Endianness": null
   },
   {
    "Lo": 5448536,
-   "Hi": 2277
+   "Hi": 2277,
+   "Endianness": null
   },
   {
    "Lo": 18446744073704103677,
-   "Hi": 2112
+   "Hi": 2112,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 18446744073704103096,
-   "Hi": 2188
+   "Hi": 2188,
+   "Endianness": null
   },
   {
    "Lo": 18446744073704103095,
-   "Hi": 2179
+   "Hi": 2179,
+   "Endianness": null
   },
   {
    "Lo": 18446744073704103094,
-   "Hi": 2163
+   "Hi": 2163,
+   "Endianness": null
   },
   {
    "Lo": 18446744073704103093,
-   "Hi": 2196
+   "Hi": 2196,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 18446744073704103399,
-   "Hi": 1848
+   "Hi": 1848,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   },
   {
    "Lo": 0,
-   "Hi": 0
+   "Hi": 0,
+   "Endianness": null
   }
  ],
  "ClientOrderIDs": [

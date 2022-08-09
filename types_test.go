@@ -18,7 +18,7 @@ import (
 	"bytes"
 	"testing"
 
-	bin "github.com/streamingfast/binary"
+	bin "github.com/gagliardetto/binary"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -32,7 +32,7 @@ func TestCompiledInstructions(t *testing.T) {
 		Data:           Base58([]byte{1, 2, 3, 4, 5}),
 	}
 	buf := &bytes.Buffer{}
-	encoder := bin.NewEncoder(buf)
+	encoder := bin.NewBinEncoder(buf)
 	err := encoder.Encode(ci)
 	require.NoError(t, err)
 	assert.Equal(t, []byte{5, 3, 2, 5, 8, 5, 1, 2, 3, 4, 5}, buf.Bytes())

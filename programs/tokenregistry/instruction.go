@@ -2,12 +2,11 @@ package tokenregistry
 
 import (
 	"bytes"
-	"encoding/binary"
 	"fmt"
 
 	"github.com/teal-finance/solana-go/text"
 
-	bin "github.com/streamingfast/binary"
+	bin "github.com/gagliardetto/binary"
 	"github.com/teal-finance/solana-go"
 )
 
@@ -25,7 +24,7 @@ func registryDecodeInstruction(accounts []*solana.AccountMeta, data []byte) (int
 
 func DecodeInstruction(accounts []*solana.AccountMeta, data []byte) (*Instruction, error) {
 	var inst Instruction
-	if err := bin.NewDecoder(data).Decode(&inst); err != nil {
+	if err := bin.NewBinDecoder(data).Decode(&inst); err != nil {
 		return nil, fmt.Errorf("unable to decode instruction for serum program: %w", err)
 	}
 
@@ -42,7 +41,7 @@ func DecodeInstruction(accounts []*solana.AccountMeta, data []byte) (*Instructio
 func NewRegisterTokenInstruction(logo Logo, name Name, symbol Symbol, website Website, tokenMetaKey, ownerKey, tokenKey solana.PublicKey) *Instruction {
 	return &Instruction{
 		BaseVariant: bin.BaseVariant{
-			TypeID: 0,
+			TypeID: bin.TypeIDFromUint32(0, bin.LE),
 			Impl: &RegisterToken{
 				Logo:    logo,
 				Name:    name,
@@ -64,7 +63,7 @@ type Instruction struct {
 
 func (i *Instruction) Accounts() (out []*solana.AccountMeta) {
 	switch i.TypeID {
-	case 0:
+	case bin.TypeIDFromUint32(0, bin.LE):
 		accounts := i.Impl.(*RegisterToken).Accounts
 		out = []*solana.AccountMeta{accounts.TokenMeta, accounts.Owner, accounts.Token}
 	}
@@ -77,7 +76,7 @@ func (i *Instruction) ProgramID() solana.PublicKey {
 
 func (i *Instruction) Data() ([]byte, error) {
 	buf := new(bytes.Buffer)
-	if err := bin.NewEncoder(buf).Encode(i); err != nil {
+	if err := bin.NewBinEncoder(buf).Encode(i); err != nil {
 		return nil, fmt.Errorf("unable to encode instruction: %w", err)
 	}
 	return buf.Bytes(), nil
@@ -96,7 +95,7 @@ func (i *Instruction) UnmarshalBinary(decoder *bin.Decoder) (err error) {
 }
 
 func (i *Instruction) MarshalBinary(encoder *bin.Encoder) error {
-	err := encoder.WriteUint32(i.TypeID, binary.LittleEndian)
+	err := encoder.WriteUint32(i.TypeID.Uint32(), bin.LE)
 	if err != nil {
 		return fmt.Errorf("unable to write variant type: %w", err)
 	}

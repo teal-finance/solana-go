@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"math/big"
 
-	bin "github.com/streamingfast/binary"
+	bin "github.com/gagliardetto/binary"
 	"github.com/teal-finance/solana-go"
 	"go.uber.org/zap"
 )
@@ -140,7 +140,7 @@ func (m *MarketV1) GetRequestQueue() solana.PublicKey {
 }
 
 func (m *MarketV1) Decode(in []byte) error {
-	decoder := bin.NewDecoder(in)
+	decoder := bin.NewBinDecoder(in)
 	err := decoder.Decode(&m)
 	if err != nil {
 		return fmt.Errorf("unpack: %w", err)
@@ -211,7 +211,7 @@ func (m *MarketV2) GetRequestQueue() solana.PublicKey {
 }
 
 func (m *MarketV2) Decode(in []byte) error {
-	decoder := bin.NewDecoder(in)
+	decoder := bin.NewBinDecoder(in)
 	err := decoder.Decode(&m)
 	if err != nil {
 		return fmt.Errorf("unpack: %w", err)
@@ -287,7 +287,7 @@ func (m *MarketV3) GetRequestQueue() solana.PublicKey {
 }
 
 func (m *MarketV3) Decode(in []byte) error {
-	decoder := bin.NewDecoder(in)
+	decoder := bin.NewBinDecoder(in)
 	err := decoder.Decode(&m)
 	if err != nil {
 		return fmt.Errorf("unpack: %w", err)
@@ -357,7 +357,7 @@ func (s *Slab) UnmarshalBinary(decoder *bin.Decoder) error {
 }
 
 func (s *Slab) MarshalBinary(encoder *bin.Encoder) error {
-	err := encoder.WriteUint32(s.TypeID, binary.LittleEndian)
+	err := encoder.WriteUint32(s.TypeID.Uint32(), bin.LE)
 	if err != nil {
 		return err
 	}
@@ -498,7 +498,7 @@ func (o *OpenOrders) GetOrder(index uint32) *Order {
 }
 
 func (o *OpenOrders) Decode(in []byte) error {
-	decoder := bin.NewDecoder(in)
+	decoder := bin.NewBinDecoder(in)
 	err := decoder.Decode(&o)
 	if err != nil {
 		return fmt.Errorf("unpack: %w", err)

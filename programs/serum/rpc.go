@@ -21,7 +21,7 @@ import (
 	"fmt"
 
 	rice "github.com/42wim/go.rice"
-	bin "github.com/streamingfast/binary"
+	bin "github.com/gagliardetto/binary"
 	"github.com/teal-finance/solana-go"
 	"github.com/teal-finance/solana-go/rpc"
 	"github.com/teal-finance/solana-go/rpc/ws"
@@ -126,7 +126,7 @@ func StreamOpenOrders(ctx context.Context, client *ws.Client) error {
 		res := d.(*ws.ProgramResult)
 
 		var f *AccountFlag
-		err = bin.NewDecoder(res.Value.Account.Data).Decode(&f)
+		err = bin.NewBinDecoder(res.Value.Account.Data).Decode(&f)
 		if err != nil {
 			fmt.Println("***********************************", err)
 			zlog.Debug("unable to decoce account flag for account... skipping",

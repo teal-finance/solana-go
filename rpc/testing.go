@@ -3,7 +3,7 @@ package rpc
 import (
 	"reflect"
 
-	bin "github.com/streamingfast/binary"
+	bin "github.com/gagliardetto/binary"
 )
 
 func newTestClient(url string) *Client {

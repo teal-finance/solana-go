@@ -5,7 +5,7 @@ import (
 	"encoding/base64"
 	"fmt"
 
-	bin "github.com/streamingfast/binary"
+	bin "github.com/gagliardetto/binary"
 	"github.com/teal-finance/solana-go"
 )
 
@@ -16,7 +16,7 @@ type SimulateTransactionResponse struct {
 
 func (c *Client) SimulateTransaction(transaction *solana.Transaction) (*SimulateTransactionResponse, error) {
 	buf := new(bytes.Buffer)
-	if err := bin.NewEncoder(buf).Encode(transaction); err != nil {
+	if err := bin.NewBinEncoder(buf).Encode(transaction); err != nil {
 		return nil, fmt.Errorf("send transaction: encode transaction: %w", err)
 	}
 	trxData := buf.Bytes()

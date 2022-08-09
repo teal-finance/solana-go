@@ -1,7 +1,7 @@
 package rpc
 
 import (
-	bin "github.com/streamingfast/binary"
+	bin "github.com/gagliardetto/binary"
 	"github.com/teal-finance/solana-go"
 )
 
@@ -24,7 +24,7 @@ func (c *Client) GetAccountDataIn(account solana.PublicKey, inVar interface{}) (
 		return err
 	}
 
-	return bin.NewDecoder(resp.Value.Data).Decode(inVar)
+	return bin.NewBinDecoder(resp.Value.Data).Decode(inVar)
 }
 
 func (c *Client) GetAccountInfo(account solana.PublicKey) (out *GetAccountInfoResult, err error) {

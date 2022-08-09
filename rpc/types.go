@@ -18,7 +18,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	bin "github.com/streamingfast/binary"
+	bin "github.com/gagliardetto/binary"
 	"github.com/teal-finance/solana-go"
 	"github.com/ybbus/jsonrpc"
 )

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"sort"
 
-	bin "github.com/streamingfast/binary"
+	bin "github.com/gagliardetto/binary"
 	"go.uber.org/zap"
 )
 
@@ -182,7 +182,7 @@ type privateKeyGetter func(key PublicKey) *PrivateKey
 
 func (t *Transaction) Sign(getter privateKeyGetter) (out []Signature, err error) {
 	buf := new(bytes.Buffer)
-	if err = bin.NewEncoder(buf).Encode(t.Message); err != nil {
+	if err = bin.NewBinEncoder(buf).Encode(t.Message); err != nil {
 		return nil, fmt.Errorf("unable to encode message for signing: %w", err)
 	}
 	messageCnt := buf.Bytes()

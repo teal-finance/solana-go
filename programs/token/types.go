@@ -3,7 +3,7 @@ package token
 import (
 	"fmt"
 
-	bin "github.com/streamingfast/binary"
+	bin "github.com/gagliardetto/binary"
 	"github.com/teal-finance/solana-go"
 )
 
@@ -34,7 +34,7 @@ type Account struct {
 }
 
 func (a *Account) Decode(key solana.PublicKey, in []byte) error {
-	decoder := bin.NewDecoder(in)
+	decoder := bin.NewBinDecoder(in)
 	err := decoder.Decode(&a)
 	if err != nil {
 		return fmt.Errorf("unpack: %w", err)
@@ -63,7 +63,7 @@ type Mint struct {
 }
 
 func (m *Mint) Decode(in []byte) error {
-	decoder := bin.NewDecoder(in)
+	decoder := bin.NewBinDecoder(in)
 	err := decoder.Decode(&m)
 	if err != nil {
 		return fmt.Errorf("unpack: %w", err)

@@ -17,7 +17,7 @@ package serum
 import (
 	"strings"
 
-	bin "github.com/streamingfast/binary"
+	bin "github.com/gagliardetto/binary"
 	"github.com/teal-finance/solana-go"
 )
 
@@ -35,7 +35,7 @@ type RequestQueue struct {
 }
 
 func (r *RequestQueue) Decode(data []byte) error {
-	decoder := bin.NewDecoder(data)
+	decoder := bin.NewBinDecoder(data)
 	return decoder.Decode(&r)
 }
 
@@ -192,7 +192,7 @@ type EventQueue struct {
 }
 
 func (q *EventQueue) Decode(data []byte) error {
-	decoder := bin.NewDecoder(data)
+	decoder := bin.NewBinDecoder(data)
 	return decoder.Decode(&q)
 }
 

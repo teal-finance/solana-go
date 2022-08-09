@@ -16,7 +16,7 @@ package tokenregistry
 import (
 	"fmt"
 
-	bin "github.com/streamingfast/binary"
+	bin "github.com/gagliardetto/binary"
 
 	"github.com/teal-finance/solana-go"
 )
@@ -37,7 +37,7 @@ type TokenMeta struct {
 
 func DecodeTokenMeta(in []byte) (*TokenMeta, error) {
 	var t *TokenMeta
-	decoder := bin.NewDecoder(in)
+	decoder := bin.NewBinDecoder(in)
 	err := decoder.Decode(&t)
 	if err != nil {
 		return nil, fmt.Errorf("unpack: %w", err)

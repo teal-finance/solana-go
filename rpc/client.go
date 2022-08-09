@@ -25,7 +25,7 @@ import (
 	"reflect"
 	"time"
 
-	bin "github.com/streamingfast/binary"
+	bin "github.com/gagliardetto/binary"
 	"github.com/streamingfast/logging"
 	"github.com/teal-finance/solana-go"
 	"github.com/ybbus/jsonrpc"
@@ -84,7 +84,7 @@ func (c *Client) SetHeader(k, v string) {
 func (c *Client) SendTransaction(transaction *solana.Transaction, opts *SendTransactionOptions) (signature string, err error) {
 	buf := new(bytes.Buffer)
 
-	if err := bin.NewEncoder(buf).Encode(transaction); err != nil {
+	if err := bin.NewBinEncoder(buf).Encode(transaction); err != nil {
 		return "", fmt.Errorf("send transaction: encode transaction: %w", err)
 	}
 

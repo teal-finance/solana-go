@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	bin "github.com/streamingfast/binary"
+	bin "github.com/gagliardetto/binary"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/teal-finance/solana-go"

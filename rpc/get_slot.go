@@ -1,7 +1,7 @@
 package rpc
 
 import (
-	bin "github.com/streamingfast/binary"
+	bin "github.com/gagliardetto/binary"
 )
 
 func (c *Client) GetSlot(commitment *CommitmentType) (uint64, error) {

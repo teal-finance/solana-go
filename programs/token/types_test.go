@@ -20,8 +20,8 @@ import (
 	"os"
 	"testing"
 
+	bin "github.com/gagliardetto/binary"
 	"github.com/mr-tron/base58"
-	bin "github.com/streamingfast/binary"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/teal-finance/solana-go"
@@ -41,7 +41,7 @@ func TestAccount(t *testing.T) {
 	// 01000000    // is initialized, is native + padding
 	// 0000000000000000    // delegate amount
 	var out Account
-	err := bin.NewDecoder(data).Decode(&out)
+	err := bin.NewBinDecoder(data).Decode(&out)
 	require.NoError(t, err)
 
 	expect := Account{
@@ -59,7 +59,7 @@ func TestAccount(t *testing.T) {
 	assert.JSONEq(t, string(expectJSON), string(outJSON))
 
 	buf := &bytes.Buffer{}
-	assert.NoError(t, bin.NewEncoder(buf).Encode(out))
+	assert.NoError(t, bin.NewBinEncoder(buf).Encode(out))
 
 	assert.Equal(t, b58data, base58.Encode(buf.Bytes()))
 }

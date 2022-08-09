@@ -18,7 +18,7 @@ import (
 	"bytes"
 	"fmt"
 
-	bin "github.com/streamingfast/binary"
+	bin "github.com/gagliardetto/binary"
 	"github.com/teal-finance/solana-go"
 	"github.com/teal-finance/solana-go/programs/system"
 	"github.com/teal-finance/solana-go/text"
@@ -40,7 +40,7 @@ func registryDecodeInstruction(accounts []*solana.AccountMeta, data []byte) (int
 
 func DecodeInstruction(accounts []*solana.AccountMeta, data []byte) (*Instruction, error) {
 	var inst Instruction
-	if err := bin.NewDecoder(data).Decode(&inst); err != nil {
+	if err := bin.NewBinDecoder(data).Decode(&inst); err != nil {
 		return nil, fmt.Errorf("unable to decode instruction for serum program: %w", err)
 	}
 	if v, ok := inst.Impl.(solana.AccountSettable); ok {
@@ -63,7 +63,7 @@ type Instruction struct {
 
 func (i *Instruction) Accounts() (out []*solana.AccountMeta) {
 	switch i.TypeID {
-	case 0:
+	case bin.TypeIDFromUint32(0, bin.LE):
 		accounts := i.Impl.(*Create).Accounts
 		out = []*solana.AccountMeta{
 			accounts.FundingAccount,
@@ -84,7 +84,7 @@ func (i *Instruction) ProgramID() solana.PublicKey {
 
 func (i *Instruction) Data() ([]byte, error) {
 	buf := new(bytes.Buffer)
-	if err := bin.NewEncoder(buf).Encode(i); err != nil {
+	if err := bin.NewBinEncoder(buf).Encode(i); err != nil {
 		return nil, fmt.Errorf("unable to encode instruction: %w", err)
 	}
 	return buf.Bytes(), nil
@@ -95,7 +95,7 @@ func (i *Instruction) UnmarshalBinary(decoder *bin.Decoder) (err error) {
 }
 
 func (i *Instruction) MarshalBinary(encoder *bin.Encoder) error {
-	err := encoder.WriteUint8(uint8(i.TypeID))
+	err := encoder.WriteUint8(i.TypeID.Uint8())
 	if err != nil {
 		return fmt.Errorf("unable to write variant type: %w", err)
 	}
@@ -128,7 +128,7 @@ func NewCreateInstruction(
 ) *Instruction {
 	return &Instruction{
 		BaseVariant: bin.BaseVariant{
-			TypeID: 0,
+			TypeID: bin.TypeIDFromUint32(0, bin.LE),
 			Impl: &Create{
 				Accounts: &CreateAccounts{
 					FundingAccount:               &solana.AccountMeta{PublicKey: fundingAccount, IsWritable: true, IsSigner: true},

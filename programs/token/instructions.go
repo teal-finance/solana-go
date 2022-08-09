@@ -6,7 +6,7 @@ import (
 
 	"github.com/teal-finance/solana-go/programs/system"
 
-	bin "github.com/streamingfast/binary"
+	bin "github.com/gagliardetto/binary"
 	"github.com/teal-finance/solana-go"
 	"github.com/teal-finance/solana-go/text"
 )
@@ -27,7 +27,7 @@ func registryDecodeInstruction(accounts []*solana.AccountMeta, data []byte) (int
 
 func DecodeInstruction(accounts []*solana.AccountMeta, data []byte) (*Instruction, error) {
 	var inst Instruction
-	if err := bin.NewDecoder(data).Decode(&inst); err != nil {
+	if err := bin.NewBinDecoder(data).Decode(&inst); err != nil {
 		return nil, fmt.Errorf("unable to decode instruction for serum program: %w", err)
 	}
 
@@ -66,10 +66,10 @@ type Instruction struct {
 
 func (i *Instruction) Accounts() (out []*solana.AccountMeta) {
 	switch i.TypeID {
-	case 0:
+	case bin.TypeIDFromUint32(0, bin.LE):
 		accounts := i.Impl.(*InitializeMint).Accounts
 		out = []*solana.AccountMeta{accounts.Mint, accounts.RentProgram}
-	case 1:
+	case bin.TypeIDFromUint32(1, bin.LE):
 		accounts := i.Impl.(*InitializeAccount).Accounts
 		out = []*solana.AccountMeta{
 			accounts.Account,
@@ -77,27 +77,27 @@ func (i *Instruction) Accounts() (out []*solana.AccountMeta) {
 			accounts.Owner,
 			accounts.RentSysvar,
 		}
-	case 3:
+	case bin.TypeIDFromUint32(3, bin.LE):
 		accounts := i.Impl.(*Transfer).Accounts
 		out = []*solana.AccountMeta{
 			accounts.Source,
 			accounts.Destination,
 			accounts.From,
 		}
-	case 6:
+	case bin.TypeIDFromUint32(6, bin.LE):
 		accounts := i.Impl.(*SetAuthority).Accounts
 		out = []*solana.AccountMeta{
 			accounts.Account,
 			accounts.CurrentAuthority,
 		}
-	case 7:
+	case bin.TypeIDFromUint32(7, bin.LE):
 		accounts := i.Impl.(*MintTo).Accounts
 		out = []*solana.AccountMeta{
 			accounts.Mint,
 			accounts.Account,
 			accounts.MintAuthority,
 		}
-	case 9:
+	case bin.TypeIDFromUint32(9, bin.LE):
 		accounts := i.Impl.(*CloseAccount).Accounts
 		out = []*solana.AccountMeta{
 			accounts.Account,
@@ -115,7 +115,7 @@ func (i *Instruction) ProgramID() solana.PublicKey {
 
 func (i *Instruction) Data() ([]byte, error) {
 	buf := new(bytes.Buffer)
-	if err := bin.NewEncoder(buf).Encode(i); err != nil {
+	if err := bin.NewBinEncoder(buf).Encode(i); err != nil {
 		return nil, fmt.Errorf("unable to encode instruction: %w", err)
 	}
 	return buf.Bytes(), nil
@@ -126,7 +126,7 @@ func (i *Instruction) UnmarshalBinary(decoder *bin.Decoder) (err error) {
 }
 
 func (i *Instruction) MarshalBinary(encoder *bin.Encoder) error {
-	err := encoder.WriteUint8(uint8(i.TypeID))
+	err := encoder.WriteUint8(i.TypeID.Uint8())
 	if err != nil {
 		return fmt.Errorf("unable to write variant type: %w", err)
 	}
@@ -167,7 +167,7 @@ func NewInitializeMintInstruction(
 ) *Instruction {
 	return &Instruction{
 		BaseVariant: bin.BaseVariant{
-			TypeID: 0,
+			TypeID: bin.TypeIDFromUint32(0, bin.LE),
 			Impl: &InitializeMint{
 				Decimals:        decimals,
 				MintAuthority:   mintAuthority,
@@ -208,7 +208,7 @@ func NewTransferInstruction(
 ) *Instruction {
 	return &Instruction{
 		BaseVariant: bin.BaseVariant{
-			TypeID: 3,
+			TypeID: bin.TypeIDFromUint32(3, bin.LE),
 			Impl: &Transfer{
 				Amount: amount,
 				Accounts: &TransferAccounts{
@@ -258,7 +258,7 @@ func NewSetAuthorityInstruction(
 ) *Instruction {
 	return &Instruction{
 		BaseVariant: bin.BaseVariant{
-			TypeID: 6,
+			TypeID: bin.TypeIDFromUint32(6, bin.LE),
 			Impl: &SetAuthority{
 				AuthorityType:   authorityType,
 				NewAuthorityKey: newAuthority,
@@ -293,7 +293,7 @@ func NewMintTo(
 ) *Instruction {
 	return &Instruction{
 		BaseVariant: bin.BaseVariant{
-			TypeID: 7,
+			TypeID: bin.TypeIDFromUint32(7, bin.LE),
 			Impl: &MintTo{
 				Amount: Amount,
 				Accounts: &MintToAccounts{
@@ -328,7 +328,7 @@ func NewCloseAccount(
 ) *Instruction {
 	return &Instruction{
 		BaseVariant: bin.BaseVariant{
-			TypeID: 9,
+			TypeID: bin.TypeIDFromUint32(9, bin.LE),
 			Impl: &CloseAccount{
 				Accounts: &CloseAccountAccounts{
 					Account:     &solana.AccountMeta{PublicKey: account, IsWritable: true},
@@ -404,7 +404,7 @@ func NewInitializeAccount(
 ) *Instruction {
 	return &Instruction{
 		BaseVariant: bin.BaseVariant{
-			TypeID: 1,
+			TypeID: bin.TypeIDFromUint32(1, bin.LE),
 			Impl: &InitializeAccount{
 				Accounts: &InitializeAccountAccounts{
 					Account:    &solana.AccountMeta{PublicKey: account, IsWritable: true},

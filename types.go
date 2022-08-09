@@ -17,7 +17,7 @@ package solana
 import (
 	"fmt"
 
-	bin "github.com/streamingfast/binary"
+	bin "github.com/gagliardetto/binary"
 )
 
 type Transaction struct {
@@ -122,7 +122,7 @@ func (ci *CompiledInstruction) ResolveInstructionAccounts(message *Message) (out
 
 func TransactionFromData(in []byte) (*Transaction, error) {
 	var out *Transaction
-	decoder := bin.NewDecoder(in)
+	decoder := bin.NewBinDecoder(in)
 	err := decoder.Decode(&out)
 	if err != nil {
 		return nil, err
